@@ -1,0 +1,56 @@
+---
+interface Props {
+  items: string[];
+}
+
+const { items } = Astro.props;
+---
+
+<div
+  id="tech"
+  class="splide"
+  role="group"
+  aria-label="Technology Stack Carousel"
+>
+  <div class="splide__track">
+    <ul class="splide__list">
+      {
+        items.map((item) => (
+          <li class="splide__slide">
+            <div class="bg-white p-4 rounded-lg shadow-md border border-gray-200 h-full flex items-center justify-center">
+              <span class="text-xl font-semibold text-gray-600">{item}</span>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<script>
+  import { Splide } from "@splidejs/splide";
+  import "@splidejs/splide/css";
+
+  document.addEventListener("DOMContentLoaded", function () {
+    new Splide("#tech", {
+      type: "loop",
+      perPage: 6,
+      perMove: 1,
+      gap: "1rem",
+      autoplay: true,
+      interval: 3000,
+      pauseOnHover: true,
+      breakpoints: {
+        1024: {
+          perPage: 4,
+        },
+        768: {
+          perPage: 3,
+        },
+        640: {
+          perPage: 2,
+        },
+      },
+    }).mount();
+  });
+</script>

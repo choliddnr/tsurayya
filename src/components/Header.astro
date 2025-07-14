@@ -1,0 +1,46 @@
+<header id="main-header" class="bg-white sticky top-0 z-50 transition-all duration-300 transform -translate-y-full">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="text-2xl font-bold text-[var(--color-primary)]">
+      Tsurayya
+    </div>
+    <div class="flex space-x-4 items-center">
+      <a href="#solutions" class="text-[var(--color-text)] hover:text-[var(--color-primary)]">Solutions</a>
+      <a href="#technologies" class="text-[var(--color-text)] hover:text-[var(--color-primary)]">Technologies</a>
+      <a href="#industries" class="text-[var(--color-text)] hover:text-[var(--color-primary)]">Industries</a>
+      <a href="#about" class="text-[var(--color-text)] hover:text-[var(--color-primary)]">About</a>
+      <a href="#our-work" class="text-[var(--color-text)] hover:text-[var(--color-primary)]">Our Work</a>
+      <a href="#blog" class="text-[var(--color-text)] hover:text-[var(--color-primary)]">Blog</a>
+      <a href="#" class="bg-[var(--color-primary)] text-white px-4 py-2 rounded-full hover:opacity-90 ml-4">Schedule a Call</a>
+    </div>
+  </nav>
+</header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('main-header');
+    let lastScrollTop = 0;
+    const scrollThreshold = 50;
+
+    // Show header initially
+    header.classList.remove('-translate-y-full');
+
+    window.addEventListener('scroll', () => {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+        // Scrolling down past threshold
+        header.classList.add('-translate-y-full');
+        header.classList.remove('shadow-on-scroll');
+      } else if (currentScroll < lastScrollTop && currentScroll > scrollThreshold) {
+        // Scrolling up past threshold
+        header.classList.remove('-translate-y-full');
+        header.classList.add('shadow-on-scroll');
+      } else if (currentScroll <= scrollThreshold) {
+        // At or near the top
+        header.classList.remove('-translate-y-full');
+        header.classList.remove('shadow-on-scroll');
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+    });
+  });
+</script>
