@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  content: { title: string; href: string; description: string }[];
+}
+
+const { title, content } = Astro.props;
+---
+
+<div class="group relative hidden lg:block h-full">
+  <button class="text-[var(--color-text)] hover:text-[var(--color-primary)] px-3 py-2 rounded-md text-sm font-medium focus:outline-none">
+    {title}
+  </button>
+  <div class="fixed left-0 right-0 top-full bg-white shadow-lg pt-4 pb-8 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out">
+    <div class="container mx-auto px-6 grid grid-cols-3 gap-8">
+      {
+        content.map((item) => (
+          <a href={item.href} class="block p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
+            <p class="font-bold text-[var(--color-text)]">{item.title}</p>
+            <p class="text-sm text-gray-600 mt-1">{item.description}</p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
