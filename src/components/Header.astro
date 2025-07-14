@@ -114,37 +114,6 @@ const industriesContent = [
     description: "Building engaging and high-performing e-commerce platforms.",
   },
 ];
-
-const aboutContent = [
-  {
-    title: "Our Process",
-    href: "#about",
-    description: "A simple and transparent process to get you started.",
-  },
-  {
-    title: "Recognitions and Awards",
-    href: "#about",
-    description: "Our achievements and industry recognition.",
-  },
-];
-
-const ourWorkContent = [
-  {
-    title: "Project Alpha",
-    href: "#our-work",
-    description: "Developed a scalable e-commerce platform for a retail giant.",
-  },
-  {
-    title: "Project Beta",
-    href: "#our-work",
-    description: "Built an AI-powered analytics dashboard for a fintech startup.",
-  },
-  {
-    title: "Project Gamma",
-    href: "#our-work",
-    description: "Designed and implemented a mobile health application for a clinic.",
-  },
-];
 ---
 
 <header id="main-header" class="bg-white sticky top-0 z-50 transition-shadow duration-300">
@@ -156,8 +125,8 @@ const ourWorkContent = [
       <NavDropdown title="Solutions" content={solutionsContent} />
       <NavDropdown title="Technologies" content={technologiesContent} />
       <NavDropdown title="Industries" content={industriesContent} />
-      <NavDropdown title="About" content={aboutContent} />
-      <NavDropdown title="Our Work" content={ourWorkContent} />
+      <a href="#about" class="text-[var(--color-text)] hover:text-[var(--color-primary)]">About</a>
+      <a href="#our-work" class="text-[var(--color-text)] hover:text-[var(--color-primary)]">Our Work</a>
       <a
         href="#blog"
         class="text-[var(--color-text)] hover:text-[var(--color-primary)]"
