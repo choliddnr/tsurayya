@@ -30,7 +30,8 @@ const solutionsContent = [
   {
     title: "Platform and Infrastructure",
     href: "#solutions",
-    description: "Building and managing scalable and secure cloud infrastructure.",
+    description:
+      "Building and managing scalable and secure cloud infrastructure.",
   },
 ];
 
@@ -63,7 +64,8 @@ const technologiesContent = [
   {
     title: "Java",
     href: "#technologies",
-    description: "A widely used, class-based, object-oriented programming language.",
+    description:
+      "A widely used, class-based, object-oriented programming language.",
   },
   {
     title: "JavaScript",
@@ -88,7 +90,8 @@ const technologiesContent = [
   {
     title: "Ruby",
     href: "#technologies",
-    description: "A dynamic, open source programming language with a focus on simplicity and productivity.",
+    description:
+      "A dynamic, open source programming language with a focus on simplicity and productivity.",
   },
   {
     title: "Vue.js",
@@ -101,12 +104,14 @@ const industriesContent = [
   {
     title: "Fintech",
     href: "#industries",
-    description: "Innovating financial services with secure and scalable solutions.",
+    description:
+      "Innovating financial services with secure and scalable solutions.",
   },
   {
     title: "Healthcare",
     href: "#industries",
-    description: "Developing robust and compliant software for the healthcare sector.",
+    description:
+      "Developing robust and compliant software for the healthcare sector.",
   },
   {
     title: "E-commerce",
@@ -116,20 +121,25 @@ const industriesContent = [
 ];
 ---
 
-<header id="main-header" class="bg-[var(--color-background)] sticky top-0 z-50 transition-shadow duration-300">
-  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="text-2xl font-bold text-[var(--color-primary)]">
-      Tsurayya
-    </div>
+<header
+  id="main-header"
+  class="bg-[var(--color-background)] sticky top-0 z-50 transition-shadow duration-300"
+>
+  <nav
+    class="container mx-auto px-6 py-4 flex justify-between items-center bg-dark"
+  >
+    <div class="text-2xl font-bold text-[var(--color-primary)]">Tsurayya</div>
     <div class="flex space-x-4 items-center">
       <NavDropdown title="Solutions" content={solutionsContent} />
       <NavDropdown title="Technologies" content={technologiesContent} />
       <NavDropdown title="Industries" content={industriesContent} />
-      <a href="#about" class="text-[var(--color-text)] hover:text-[var(--color-primary)]">About</a>
-      <a href="#our-work" class="text-[var(--color-text)] hover:text-[var(--color-primary)]">Our Work</a>
-      <a
-        href="#blog"
-        class="text-[var(--color-text)] hover:text-[var(--color-primary)]"
+      <a href="#about" class="text-white hover:text-[var(--color-primary)]"
+        >About</a
+      >
+      <a href="#our-work" class="text-white hover:text-[var(--color-primary)]"
+        >Our Work</a
+      >
+      <a href="#blog" class="text-white hover:text-[var(--color-primary)]"
         >Blog</a
       >
       <a
@@ -148,23 +158,27 @@ const industriesContent = [
     const scrollThreshold = 50;
 
     // Show header initially
-    header.classList.remove('-translate-y-full');
+    header.classList.remove("-translate-y-full");
 
-    window.addEventListener('scroll', () => {
-      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    window.addEventListener("scroll", () => {
+      let currentScroll =
+        window.pageYOffset || document.documentElement.scrollTop;
 
       if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
         // Scrolling down past threshold
-        header.classList.add('-translate-y-full');
-        header.classList.remove('shadow-on-scroll');
-      } else if (currentScroll < lastScrollTop && currentScroll > scrollThreshold) {
+        header.classList.add("-translate-y-full");
+        header.classList.remove("shadow-on-scroll");
+      } else if (
+        currentScroll < lastScrollTop &&
+        currentScroll > scrollThreshold
+      ) {
         // Scrolling up past threshold
-        header.classList.remove('-translate-y-full');
-        header.classList.add('shadow-on-scroll');
+        header.classList.remove("-translate-y-full");
+        header.classList.add("shadow-on-scroll");
       } else if (currentScroll <= scrollThreshold) {
         // At or near the top
-        header.classList.remove('-translate-y-full');
-        header.classList.remove('shadow-on-scroll');
+        header.classList.remove("-translate-y-full");
+        header.classList.remove("shadow-on-scroll");
       }
       lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
     });

@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import '@splidejs/splide/css';
+import "@splidejs/splide/css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
@@ -17,7 +17,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="font-sans antialiased text-[var(--color-text)] bg-[var(--color-background)]">
+  <body class="font-sans antialiased text-[var(--color-text)] bg-dark">
     <Header />
     <main>
       <slot />
