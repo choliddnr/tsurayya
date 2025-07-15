@@ -14,17 +14,20 @@ const phrases = [
 
 const testimonials = [
   {
-    quote: "Tsurayya has been an invaluable partner in accelerating our development roadmap. Their talent is top-notch and their process is seamless.",
+    quote:
+      "Tsurayya has been an invaluable partner in accelerating our development roadmap. Their talent is top-notch and their process is seamless.",
     author: "John Doe",
     title: "CTO at ExampleCorp",
   },
   {
-    quote: "The team at Tsurayya delivered beyond our expectations. Their expertise in AI and data science helped us unlock new opportunities.",
+    quote:
+      "The team at Tsurayya delivered beyond our expectations. Their expertise in AI and data science helped us unlock new opportunities.",
     author: "Jane Smith",
     title: "CEO at InnovateNow",
   },
   {
-    quote: "We highly recommend Tsurayya for their exceptional mobile app development. They transformed our vision into a stunning reality.",
+    quote:
+      "We highly recommend Tsurayya for their exceptional mobile app development. They transformed our vision into a stunning reality.",
     author: "Peter Jones",
     title: "Founder of MobileSolutions",
   },
@@ -32,60 +35,53 @@ const testimonials = [
 ---
 
 <Layout title="Tsurayya - Nearshore Software Development & Staff Augmentation">
-  <div class="py-20 bg-white text-[var(--color-text)] relative overflow-hidden">
-    <div class="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+  <div class="py-24 md:py-32 bg-[var(--color-background)] text-[var(--color-text)] relative overflow-hidden">
+    <div
+      class="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+    >
       <div class="text-left">
-        <h1 class="text-4xl md:text-6xl mb-4 leading-tight font-bold text-[var(--color-primary)]">
+        <h1
+          class="text-5xl md:text-7xl mb-6 leading-tight font-extrabold text-[var(--color-primary)]"
+        >
           Your Partner in Digital Transformation
         </h1>
-        <p class="text-2xl mb-6 opacity-90 text-[var(--color-primary)]">
+        <p class="text-2xl md:text-3xl mb-8 opacity-90 text-[var(--color-primary)]">
           <Typewriter phrases={phrases} />
         </p>
-        <p class="text-xl mb-10 max-w-4xl opacity-90 text-[var(--color-text)]">
+        <p class="text-xl md:text-2xl mb-12 max-w-4xl opacity-90 text-[var(--color-text)]">
           We are the leading Nearshore Software Development & Staff Augmentation
-          partner for a reason. Over 500 companies — from startups to Fortune 500
-          giants — trust us to build and enhance their technology teams.
+          partner for a reason. Over 500 companies — from startups to Fortune
+          500 giants — trust us to build and enhance their technology teams.
         </p>
         <a
           href="#"
-          class="bg-[var(--color-primary)] text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-gray-700 transition duration-300 inline-block shadow-lg"
-          >Schedule a Call</a
+          class="bg-[var(--color-accent)] text-white px-12 py-5 rounded-full text-xl font-semibold hover:opacity-90 transition duration-300 inline-block shadow-lg transform hover:scale-105"
+        >Schedule a Call</a
         >
       </div>
       <div class="flex justify-center items-center">
         <!-- Placeholder for Hero Image/Illustration -->
-        <img src="/placeholder-hero.svg" alt="Abstract illustration of technology" class="w-full max-w-md h-auto object-contain">
+        <img
+          src="/placeholder-hero.svg"
+          alt="Abstract illustration of technology"
+          class="w-full max-w-lg h-auto object-contain"
+        />
       </div>
     </div>
   </div>
 
-  <div class="py-12 bg-[var(--color-background)] text-center">
+  <div id="solutions" class="py-20 md:py-24 bg-[var(--color-background)]">
     <div class="container mx-auto px-6">
-      <h2 class="text-lg font-semibold text-[var(--color-text)] mb-6 opacity-75">
-        As featured in...
-      </h2>
-      <div class="flex justify-center items-center space-x-8 flex-wrap gap-4 py-4">
-        <div class="text-3xl font-bold text-gray-500 opacity-80 hover:opacity-100 transition-opacity duration-300">CNBC</div>
-        <div class="text-3xl font-bold text-gray-500 opacity-80 hover:opacity-100 transition-opacity duration-300">Forbes</div>
-        <div class="text-3xl font-bold text-gray-500 opacity-80 hover:opacity-100 transition-opacity duration-300">Bloomberg</div>
-        <div class="text-3xl font-bold text-gray-500 opacity-80 hover:opacity-100 transition-opacity duration-300">Reuters</div>
-        <div class="text-3xl font-bold text-gray-500 opacity-80 hover:opacity-100 transition-opacity duration-300">Yahoo!</div>
-      </div>
-    </div>
-  </div>
-
-  <div id="solutions" class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-[var(--color-text)] mb-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-[var(--color-text)] mb-6">
           From Concept to Completion: Our Full-Stack Expertise
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-xl md:text-2xl text-[var(--color-text)] max-w-3xl mx-auto opacity-90">
           We provide a wide range of services to help you build and scale your
           software products.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         <ServiceCard
           title="Custom Software Development"
           description="Building scalable and robust software solutions tailored to your specific business needs."
@@ -120,103 +116,123 @@ const testimonials = [
     </div>
   </div>
 
-  <div class="py-12 bg-[var(--color-background)] text-center">
+  <div id="technologies" class="py-20 md:py-24 bg-[var(--color-background)] text-center">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-[var(--color-text)] mb-8">
-        Recognitions and Awards
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4 bg-white rounded-lg shadow-inner">
-        <div class="text-xl font-semibold text-gray-600 p-4 border border-gray-200 rounded-lg">Financial Times</div>
-        <div class="text-xl font-semibold text-gray-600 p-4 border border-gray-200 rounded-lg">Newsweek</div>
-        <div class="text-xl font-semibold text-gray-600 p-4 border border-gray-200 rounded-lg">Inc. 5000</div>
-      </div>
-    </div>
-  </div>
-
-  <div id="technologies" class="py-16 bg-white text-center">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold text-[var(--color-text)] mb-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-[var(--color-text)] mb-6">
         Our Technology Stack
       </h2>
-      <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+      <p class="text-xl md:text-2xl text-[var(--color-text)] mb-12 max-w-3xl mx-auto opacity-90">
         We have a team of experts in a wide range of technologies.
       </p>
-      <TechCarousel items={[".NET", "AI", "Angular", "AWS", "C#", "Java", "JavaScript", "Node.js", "Python", "React", "Ruby", "Vue.js"]} />
+      <TechCarousel
+        items={[
+          ".NET",
+          "AI",
+          "Angular",
+          "AWS",
+          "C#",
+          "Java",
+          "JavaScript",
+          "Node.js",
+          "Python",
+          "React",
+          "Ruby",
+          "Vue.js",
+        ]}
+      />
     </div>
   </div>
 
-  <div id="industries" class="py-16 bg-[var(--color-background)] text-center">
+  <div id="about" class="py-20 md:py-24 bg-[var(--color-background)]">
     <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold text-[var(--color-text)] mb-4">
-        Industries We Serve
-      </h2>
-      <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
-        We bring deep industry expertise to deliver tailored solutions.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300 border border-gray-200">
-          <h3 class="text-xl font-bold text-[var(--color-text)] mb-2">Fintech</h3>
-          <p class="text-gray-600">Innovating financial services with secure and scalable solutions.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300 border border-gray-200">
-          <h3 class="text-xl font-bold text-[var(--color-text)] mb-2">Healthcare</h3>
-          <p class="text-gray-600">Developing robust and compliant software for the healthcare sector.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300 border border-gray-200">
-          <h3 class="text-xl font-bold text-[var(--color-text)] mb-2">E-commerce</h3>
-          <p class="text-gray-600">Building engaging and high-performing e-commerce platforms.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="about" class="py-16 bg-[var(--color-background)]">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-[var(--color-text)] mb-4">Our Process</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-[var(--color-text)] mb-6">
+          Our Process
+        </h2>
+        <p class="text-xl md:text-2xl text-[var(--color-text)] max-w-3xl mx-auto opacity-90">
           A simple and transparent process to get you started.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div class="bg-white p-8 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
-          <div class="text-5xl font-bold text-[var(--color-primary)] mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+        <div
+          class="bg-white p-10 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center"
+        >
+          <div class="text-6xl font-bold text-[var(--color-primary)] mb-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-16 w-16 mx-auto"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+              ></path>
             </svg>
             1
           </div>
-          <h3 class="text-2xl font-bold text-[var(--color-text)] mb-2">Exploration Call</h3>
-          <p class="text-gray-600">
+          <h3 class="text-2xl font-bold text-[var(--color-text)] mb-4">
+            Exploration Call
+          </h3>
+          <p class="text-lg text-[var(--color-text)] opacity-90">
             We start with a call to understand your needs and goals.
           </p>
         </div>
-        <div class="bg-white p-8 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
-          <div class="text-5xl font-bold text-[var(--color-primary)] mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h2a2 2 0 002-2V4a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h2m5-9V3m0 0L9 6m3-3l3 3m-6 7h.01M12 14h.01M15 14h.01M12 17h.01M15 17h.01M17 17h.01" />
+        <div
+          class="bg-white p-10 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center"
+        >
+          <div class="text-6xl font-bold text-[var(--color-primary)] mb-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-16 w-16 mx-auto"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17 20h2a2 2 0 002-2V4a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h2m5-9V3m0 0L9 6m3-3l3 3m-6 7h.01M12 14h.01M15 14h.01M12 17h.01M15 17h.01M17 17h.01"
+              ></path>
             </svg>
             2
           </div>
-          <h3 class="text-2xl font-bold text-[var(--color-text)] mb-2">
+          <h3 class="text-2xl font-bold text-[var(--color-text)] mb-4">
             Solution and Team
           </h3>
-          <p class="text-gray-600">
+          <p class="text-lg text-[var(--color-text)] opacity-90">
             We propose a solution and assemble the perfect team for your
             project.
           </p>
         </div>
-        <div class="bg-white p-8 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
-          <div class="text-5xl font-bold text-[var(--color-primary)] mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M10 16h.01" />
+        <div
+          class="bg-white p-10 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center"
+        >
+          <div class="text-6xl font-bold text-[var(--color-primary)] mb-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-16 w-16 mx-auto"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M10 16h.01"
+              ></path>
             </svg>
             3
           </div>
-          <h3 class="text-2xl font-bold text-[var(--color-text)] mb-2">
+          <h3 class="text-2xl font-bold text-[var(--color-text)] mb-4">
             Project Execution
           </h3>
-          <p class="text-gray-600">
+          <p class="text-lg text-[var(--color-text)] opacity-90">
             We execute the project with a focus on quality and timely delivery.
           </p>
         </div>
@@ -224,117 +240,173 @@ const testimonials = [
     </div>
   </div>
 
-  <div id="our-work" class="py-16 bg-white text-center">
+  <div id="our-work" class="py-20 md:py-24 bg-[var(--color-background)] text-center">
     <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold text-[var(--color-text)] mb-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-[var(--color-text)] mb-6">
         Our Recent Work
       </h2>
-      <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+      <p class="text-xl md:text-2xl text-[var(--color-text)] mb-12 max-w-3xl mx-auto opacity-90">
         Explore some of our successful projects and case studies.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-[var(--color-background)] p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300 border border-gray-200">
-          <img src="https://via.placeholder.com/400x250" alt="Project Alpha" class="w-full h-48 object-cover rounded-md mb-4">
-          <h3 class="text-xl font-bold text-[var(--color-text)] mb-2">Project Alpha</h3>
-          <p class="text-gray-600">Developed a scalable e-commerce platform for a retail giant.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div
+          class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 border border-gray-200"
+        >
+          <img
+            src="https://via.placeholder.com/400x250"
+            alt="Project Alpha"
+            class="w-full h-56 object-cover rounded-md mb-6"
+          />
+          <h3 class="text-2xl font-bold text-[var(--color-text)] mb-2">
+            Project Alpha
+          </h3>
+          <p class="text-lg text-[var(--color-text)] opacity-90">
+            Developed a scalable e-commerce platform for a retail giant.
+          </p>
         </div>
-        <div class="bg-[var(--color-background)] p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300 border border-gray-200">
-          <img src="https://via.placeholder.com/400x250" alt="Project Beta" class="w-full h-48 object-cover rounded-md mb-4">
-          <h3 class="text-xl font-bold text-[var(--color-text)] mb-2">Project Beta</h3>
-          <p class="text-gray-600">Built an AI-powered analytics dashboard for a fintech startup.</p>
+        <div
+          class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 border border-gray-200"
+        >
+          <img
+            src="https://via.placeholder.com/400x250"
+            alt="Project Beta"
+            class="w-full h-56 object-cover rounded-md mb-6"
+          />
+          <h3 class="text-2xl font-bold text-[var(--color-text)] mb-2">
+            Project Beta
+          </h3>
+          <p class="text-lg text-[var(--color-text)] opacity-90">
+            Built an AI-powered analytics dashboard for a fintech startup.
+          </p>
         </div>
-        <div class="bg-[var(--color-background)] p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300 border border-gray-200">
-          <img src="https://via.placeholder.com/400x250" alt="Project Gamma" class="w-full h-48 object-cover rounded-md mb-4">
-          <h3 class="text-xl font-bold text-[var(--color-text)] mb-2">Project Gamma</h3>
-          <p class="text-gray-600">Designed and implemented a mobile health application for a clinic.</p>
+        <div
+          class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 border border-gray-200"
+        >
+          <img
+            src="https://via.placeholder.com/400x250"
+            alt="Project Gamma"
+            class="w-full h-56 object-cover rounded-md mb-6"
+          />
+          <h3 class="text-2xl font-bold text-[var(--color-text)] mb-2">
+            Project Gamma
+          </h3>
+          <p class="text-lg text-[var(--color-text)] opacity-90">
+            Designed and implemented a mobile health application for a clinic.
+          </p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="py-16 bg-[var(--color-primary)] text-white text-center">
+  <div class="py-20 md:py-24 bg-[var(--color-primary)] text-white text-center">
     <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-4 leading-tight">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
         Want to accelerate software development at your company?
       </h2>
-      <p class="text-xl mb-10 max-w-3xl mx-auto opacity-90">
+      <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto opacity-90">
         Let's discuss how our vetted nearshore tech talent can help you achieve
         your goals.
       </p>
       <a
         href="#"
-        class="bg-white text-[var(--color-primary)] px-10 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 inline-block shadow-lg"
+        class="bg-[var(--color-accent)] text-white px-12 py-5 rounded-full text-xl font-semibold hover:opacity-90 transition duration-300 inline-block shadow-lg transform hover:scale-105"
         >Schedule a Call</a
       >
     </div>
   </div>
 
-  <div class="py-16 bg-white text-center">
+  <div class="py-20 md:py-24 bg-[var(--color-background)] text-center">
     <div class="container mx-auto px-6">
-      <div class="mb-12">
-        <h2 class="text-4xl font-bold text-[var(--color-text)] mb-4">
+      <div class="mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-[var(--color-text)] mb-6">
           Trusted by Industry Leaders
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-xl md:text-2xl text-[var(--color-text)] max-w-3xl mx-auto opacity-90">
           Hear what our clients have to say about working with Tsurayya.
         </p>
       </div>
       <TestimonialCarousel testimonials={testimonials} />
-      <div class="mt-8">
+      <div class="mt-12">
         <a
           href="#"
-          class="bg-[var(--color-primary)] text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition duration-300 inline-block shadow-lg"
+          class="bg-[var(--color-accent)] text-white px-10 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition duration-300 inline-block shadow-lg transform hover:scale-105"
           >View All Case Studies</a
         >
       </div>
     </div>
   </div>
 
-  <div id="blog" class="py-16 bg-[var(--color-background)]">
+  <div id="blog" class="py-20 md:py-24 bg-[var(--color-background)]">
     <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-[var(--color-text)] mb-4">Latest Insights</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-[var(--color-text)] mb-6">
+          Latest Insights
+        </h2>
+        <p class="text-xl md:text-2xl text-[var(--color-text)] max-w-3xl mx-auto opacity-90">
           Stay up-to-date with the latest trends and news in the tech industry.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300 border border-gray-200">
-          <img src="https://via.placeholder.com/400x250" alt="Blog Post Image" class="w-full h-48 object-cover rounded-md mb-4">
-          <h3 class="text-xl font-bold text-[var(--color-text)] mb-2">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div
+          class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 border border-gray-200"
+        >
+          <img
+            src="https://via.placeholder.com/400x250"
+            alt="Blog Post Image"
+            class="w-full h-56 object-cover rounded-md mb-6"
+          />
+          <h3 class="text-2xl font-bold text-[var(--color-text)] mb-2">
             The Future of AI in Software Development
           </h3>
-          <p class="text-gray-600 mb-4">
+          <p class="text-lg text-[var(--color-text)] opacity-90 mb-4">
             Explore how artificial intelligence is transforming the way we build
             software.
           </p>
-          <a href="#" class="text-[var(--color-primary)] font-bold hover:underline"
+          <a
+            href="#"
+            class="text-[var(--color-primary)] font-bold hover:underline text-lg"
             >Read More</a
           >
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300 border border-gray-200">
-          <img src="https://via.placeholder.com/400x250" alt="Blog Post Image" class="w-full h-48 object-cover rounded-md mb-4">
-          <h3 class="text-xl font-bold text-[var(--color-text)] mb-2">
+        <div
+          class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 border border-gray-200"
+        >
+          <img
+            src="https://via.placeholder.com/400x250"
+            alt="Blog Post Image"
+            class="w-full h-56 object-cover rounded-md mb-6"
+          />
+          <h3 class="text-2xl font-bold text-[var(--color-text)] mb-2">
             Nearshore vs. Offshore: Which is Right for You?
           </h3>
-          <p class="text-gray-600 mb-4">
+          <p class="text-lg text-[var(--color-text)] opacity-90 mb-4">
             A comprehensive guide to choosing the best outsourcing model for
             your business.
           </p>
-          <a href="#" class="text-[var(--color-primary)] font-bold hover:underline"
+          <a
+            href="#"
+            class="text-[var(--color-primary)] font-bold hover:underline text-lg"
             >Read More</a
           >
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-105 transition duration-300 border border-gray-200">
-          <img src="https://via.placeholder.com/400x250" alt="Blog Post Image" class="w-full h-48 object-cover rounded-md mb-4">
-          <h3 class="text-xl font-bold text-[var(--color-text)] mb-2">
+        <div
+          class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 border border-gray-200"
+        >
+          <img
+            src="https://via.placeholder.com/400x250"
+            alt="Blog Post Image"
+            class="w-full h-56 object-cover rounded-md mb-6"
+          />
+          <h3 class="text-2xl font-bold text-[var(--color-text)] mb-2">
             Top 5 Programming Languages for Web Development in 2025
           </h3>
-          <p class="text-gray-600 mb-4">
+          <p class="text-lg text-[var(--color-text)] opacity-90 mb-4">
             Discover the most in-demand languages for building modern web
             applications.
           </p>
-          <a href="#" class="text-[var(--color-primary)] font-bold hover:underline"
+          <a
+            href="#"
+            class="text-[var(--color-primary)] font-bold hover:underline text-lg"
             >Read More</a
           >
         </div>

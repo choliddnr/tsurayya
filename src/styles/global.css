@@ -7,10 +7,11 @@
 
 /* Custom CSS Variables */
 :root {
-  --color-primary: #389ce5;
+  --color-primary: #004791;
   --color-text: #333333;
-  --color-background: #f8f8f8;
-  --color-accent: #ffc107;
+  --color-background: #F0F8FF;
+  --color-accent: #FF8C00;
+  --color-background-hover: #E0F2FF;
 }
 
 /* Global Styles */
