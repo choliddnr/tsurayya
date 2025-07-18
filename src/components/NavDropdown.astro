@@ -1,11 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
+
 interface Props {
   title: string;
   content: { title: string; href: string; description: string }[];
+  description: { primary: string; secondary: string };
 }
 
-const { title, content } = Astro.props;
+const { title, content, description } = Astro.props;
 ---
 
 <div class="group relative hidden lg:block h-full">
@@ -23,24 +25,36 @@ const { title, content } = Astro.props;
     />
   </button>
   <div
-    class="fixed left-0 right-0 top-16 bg-dark shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50"
+    class="fixed left-0 right-0 top-16 p-0 bg-dark opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 border border-primary/20 rounded-lg shadow-2xl"
   >
-    <div class="container mx-auto px-6 py-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {
-          content.map((item) => (
-            <a
-              href={item.href}
-              class="block p-4 hover:bg-dark-hover rounded-lg transition-colors duration-200"
-            >
-              <p class="font-bold text-white">{item.title}</p>
-              <p class="text-sm text-white opacity-90 mt-1">
-                {item.description}
-              </p>
-            </a>
-          ))
-        }
-      </div>
+    <div class="flex flex-row">
+      <span
+        class="container grow p-6 w-lg h-full min-h-96 bg-dark-hover my-auto content-center"
+      >
+        <span class="text-xl text-light text-right"
+          ><h3 class="font-bold">{description.primary}</h3>
+          <p>{description.secondary}</p></span
+        >
+      </span>
+      <span class="grid p-6">
+        <div class="container mx-auto inline-grid">
+          <div class="inline-grid grid-cols-1 md:grid-cols-2 gap-6">
+            {
+              content.map((item) => (
+                <a
+                  href={item.href}
+                  class="block p-4 hover:bg-dark-hover rounded-lg transition-colors duration-200"
+                >
+                  <p class="font-bold text-white">{item.title}</p>
+                  <p class="text-sm text-white opacity-90 mt-1">
+                    {item.description}
+                  </p>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </span>
     </div>
   </div>
 </div>

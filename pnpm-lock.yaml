@@ -8,9 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@iconify-json/fa6-brands':
+        specifier: ^1.2.5
+        version: 1.2.5
       '@iconify-json/heroicons':
         specifier: ^1.2.2
         version: 1.2.2
+      '@iconify/types':
+        specifier: ^2.0.0
+        version: 2.0.0
       '@splidejs/splide':
         specifier: ^4.1.4
         version: 4.1.4
@@ -241,6 +247,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@iconify-json/fa6-brands@1.2.5':
+    resolution: {integrity: sha512-U/iFfziz6jSN9zArOJZYTtoj2tQyh6MxPdI8M84DQ2kEulPaj8j+h9bqvjmzszNHmD7v+kmmKd/MLkMKk+3Zuw==}
 
   '@iconify-json/heroicons@1.2.2':
     resolution: {integrity: sha512-qoW4pXr5kTTL6juEjgTs83OJIwpePu7q1tdtKVEdj+i0zyyVHgg/dd9grsXJQnpTpBt6/VwNjrXBvFjRsKPENg==}
@@ -2211,6 +2220,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.6':
     optional: true
+
+  '@iconify-json/fa6-brands@1.2.5':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/heroicons@1.2.2':
     dependencies:

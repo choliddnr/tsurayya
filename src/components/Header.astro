@@ -1,150 +1,137 @@
 ---
 import NavDropdown from "./NavDropdown.astro";
 
+const solutionDescription = {
+  primary:
+    "We craft scalable digital solutions tailored to real-world business challenges.",
+  secondary:
+    "From websites to AI-powered systems, our solutions are built to solve problems and deliver results.",
+};
 const solutionsContent = [
   {
-    title: "Custom Software Development",
-    href: "#solutions",
-    description: "Building scalable and robust software solutions.",
+    title: "AI & Automation",
+    href: "/services",
+    description: "Boost efficiency with smart chatbots and workflows.",
   },
   {
-    title: "QA and Testing",
-    href: "#solutions",
-    description: "Ensuring your software is reliable and performs flawlessly.",
+    title: "Web Development",
+    href: "/services",
+    description: "Custom websites and web apps tailored to your goals.",
   },
   {
-    title: "AI and Data Science",
-    href: "#solutions",
-    description: "Leveraging AI and data to unlock new opportunities.",
+    title: "Infrastructure",
+    href: "/services",
+    description: "Reliable, secure, and scalable system setups.",
   },
   {
-    title: "Mobile App Development",
-    href: "#solutions",
-    description: "Creating engaging and high-performing mobile applications.",
-  },
-  {
-    title: "UX/UI Design",
-    href: "#solutions",
-    description: "Designing intuitive and beautiful user experiences.",
-  },
-  {
-    title: "Platform and Infrastructure",
-    href: "#solutions",
-    description:
-      "Building and managing scalable and secure cloud infrastructure.",
+    title: "Business Tools",
+    href: "/services",
+    description: "Lead gen, client portals, and internal dashboards.",
   },
 ];
 
+const technologiesDescription = {
+  primary: "We choose proven, modern technologies trusted by the industry.",
+  secondary:
+    "Our stack is carefully selected for performance, scalability, and long-term reliability.",
+};
 const technologiesContent = [
   {
-    title: ".NET",
-    href: "#technologies",
-    description: "Microsoft's comprehensive development platform.",
+    title: "Frontend",
+    href: "/technologies",
+    description: "Nuxt 3, Vue3, Astrojs, Tailwind CSS, AlpineJS — fast & responsive.",
   },
   {
-    title: "AI",
-    href: "#technologies",
-    description: "Artificial Intelligence and Machine Learning solutions.",
+    title: "Backend",
+    href: "/technologies",
+    description: "Node.js, Bun, PocketBase for powerful APIs.",
   },
   {
-    title: "Angular",
-    href: "#technologies",
-    description: "Google's framework for building web applications.",
+    title: "AI Tools",
+    href: "/technologies",
+    description: "GPT, n8n, Langchain for automation and insight.",
   },
   {
-    title: "AWS",
-    href: "#technologies",
-    description: "Amazon Web Services cloud computing services.",
-  },
-  {
-    title: "C#",
-    href: "#technologies",
-    description: "A modern, object-oriented programming language.",
-  },
-  {
-    title: "Java",
-    href: "#technologies",
-    description:
-      "A widely used, class-based, object-oriented programming language.",
-  },
-  {
-    title: "JavaScript",
-    href: "#technologies",
-    description: "The programming language for the Web.",
-  },
-  {
-    title: "Node.js",
-    href: "#technologies",
-    description: "A JavaScript runtime built on Chrome's V8 JavaScript engine.",
-  },
-  {
-    title: "Python",
-    href: "#technologies",
-    description: "A high-level, interpreted programming language.",
-  },
-  {
-    title: "React",
-    href: "#technologies",
-    description: "A JavaScript library for building user interfaces.",
-  },
-  {
-    title: "Ruby",
-    href: "#technologies",
-    description:
-      "A dynamic, open source programming language with a focus on simplicity and productivity.",
-  },
-  {
-    title: "Vue.js",
-    href: "#technologies",
-    description: "A progressive framework for building user interfaces.",
+    title: "DevOps & Infra",
+    href: "/technologies",
+    description: "Docker, Nginx, Kubernetes for modern deployment.",
   },
 ];
 
+const industriesDescription = {
+  primary: "We serve diverse industries with custom-fit digital tools.",
+  secondary:
+    "No matter your field, we adapt technology to meet your goals and speak your language.",
+};
 const industriesContent = [
   {
-    title: "Fintech",
-    href: "#industries",
-    description:
-      "Innovating financial services with secure and scalable solutions.",
+    title: "Food & Beverage",
+    href: "/industries",
+    description: "Menu tools, ordering systems, AI waiters.",
   },
   {
-    title: "Healthcare",
-    href: "#industries",
-    description:
-      "Developing robust and compliant software for the healthcare sector.",
+    title: "Retail & eCommerce",
+    href: "/industries",
+    description: "Inventory tracking, chat-order bots, storefronts.",
   },
   {
-    title: "E-commerce",
-    href: "#industries",
-    description: "Building engaging and high-performing e-commerce platforms.",
+    title: "Agencies",
+    href: "/industries",
+    description: "Portals, automation, and smart reporting tools.",
+  },
+  {
+    title: "Health & Wellness",
+    href: "/industries",
+    description: "Booking, support agents, and custom dashboards.",
+  },
+  {
+    title: "Education",
+    href: "/industries",
+    description: "AI tutors, course systems, certification portals.",
   },
 ];
 ---
 
 <header
   id="main-header"
-  class="bg-[var(--color-background)] sticky top-0 z-50 transition-shadow duration-300"
+  class="bg-[var(--color-background)] sticky top-0 z-50 transition-shadow transition-transform duration-500 ease-in-out"
 >
   <nav
     class="container mx-auto px-6 py-4 flex justify-between items-center bg-dark"
   >
-    <div class="text-2xl font-bold text-[var(--color-primary)]">Tsurayya</div>
+    <div class="text-2xl font-bold">
+      <a href="/" class="text-white text-2xl font-bold"
+        >Tsurayya<span class="gradient-text">Engineering</span></a
+      >
+    </div>
     <div class="flex space-x-4 items-center">
-      <NavDropdown title="Solutions" content={solutionsContent} />
-      <NavDropdown title="Technologies" content={technologiesContent} />
-      <NavDropdown title="Industries" content={industriesContent} />
-      <a href="#about" class="text-white hover:text-[var(--color-primary)]"
+      <NavDropdown
+        title="Solutions"
+        content={solutionsContent}
+        description={solutionDescription}
+      />
+      <NavDropdown
+        title="Technologies"
+        content={technologiesContent}
+        description={technologiesDescription}
+      />
+      <NavDropdown
+        title="Industries"
+        content={industriesContent}
+        description={industriesDescription}
+      />
+      <a href="/about" class="text-white hover:text-[var(--color-primary)]"
         >About</a
       >
-      <a href="#our-work" class="text-white hover:text-[var(--color-primary)]"
+      <a href="/work" class="text-white hover:text-[var(--color-primary)]"
         >Our Work</a
       >
-      <a href="#blog" class="text-white hover:text-[var(--color-primary)]"
+      <a href="/blog" class="text-white hover:text-[var(--color-primary)]"
         >Blog</a
       >
       <a
-        href="#"
-        class="bg-[var(--color-accent)] text-white px-4 py-2 rounded-full hover:opacity-90"
+        href="/contact"
+        class="bg-[var(--color-accent)] text-dark px-4 py-2 rounded-full hover:opacity-90 cyber-button"
         >Schedule a Call</a
       >
     </div>
@@ -167,18 +154,18 @@ const industriesContent = [
       if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
         // Scrolling down past threshold
         header.classList.add("-translate-y-full");
-        header.classList.remove("shadow-on-scroll");
+        header.classList.remove("shadow-lg");
       } else if (
         currentScroll < lastScrollTop &&
         currentScroll > scrollThreshold
       ) {
         // Scrolling up past threshold
         header.classList.remove("-translate-y-full");
-        header.classList.add("shadow-on-scroll");
+        header.classList.add("shadow-lg");
       } else if (currentScroll <= scrollThreshold) {
         // At or near the top
         header.classList.remove("-translate-y-full");
-        header.classList.remove("shadow-on-scroll");
+        header.classList.remove("shadow-lg");
       }
       lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
     });

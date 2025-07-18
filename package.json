@@ -9,7 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@iconify-json/fa6-brands": "^1.2.5",
     "@iconify-json/heroicons": "^1.2.2",
+    "@iconify/types": "^2.0.0",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@tailwindcss/vite": "^4.1.11",
