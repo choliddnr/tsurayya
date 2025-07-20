@@ -1,0 +1,63 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  title: string;
+  content: { title: string; href: string; description: string }[];
+  description: { primary: string; secondary: string };
+}
+
+const { title, content, description } = Astro.props;
+---
+
+<div class="relative">
+  <button
+    class="text-white hover:text-[var(--color-accent)] px-3 py-2 rounded-md text-base font-medium focus:outline-none w-full flex items-center justify-between"
+    data-mobile-dropdown-toggle
+  >
+    <span>{title}</span>
+    <Icon
+      name="heroicons:chevron-down"
+      class="w-5 h-5 ml-1 transition-transform duration-300 ease-in-out transform rotate-0 data-[state=open]:rotate-180"
+    />
+  </button>
+  <div
+    class="bg-dark-hover rounded-md mt-2 py-2 px-3 space-y-1"
+    data-mobile-dropdown-menu style="display: none;"
+  >
+    <div class="py-2">
+      <p class="text-sm text-light opacity-80 mb-2">
+        {description.primary}
+      </p>
+      <p class="text-xs text-light opacity-60 mb-4">
+        {description.secondary}
+      </p>
+    </div>
+    {
+      content.map((item) => (
+        <a
+          href={item.href}
+          class="block p-2 hover:bg-dark rounded-md text-sm font-medium text-white"
+        >
+          <p class="font-bold">{item.title}</p>
+          <p class="text-xs opacity-80">{item.description}</p>
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const dropdownToggles = document.querySelectorAll('[data-mobile-dropdown-toggle]');
+
+    dropdownToggles.forEach(toggle => {
+      const menu = toggle.nextElementSibling;
+      toggle.addEventListener('click', () => {
+        const isMenuOpen = menu!.style.display === "block";
+        menu!.style.display = isMenuOpen ? "none" : "block";
+        toggle.setAttribute('data-state', isMenuOpen ? 'closed' : 'open');
+      });
+    });
+  });
+</script>

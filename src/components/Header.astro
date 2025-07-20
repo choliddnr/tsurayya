@@ -1,5 +1,6 @@
 ---
 import NavDropdown from "./NavDropdown.astro";
+import NavDropdownMobile from "./NavDropdownMobile.astro";
 
 const solutionDescription = {
   primary:
@@ -94,17 +95,17 @@ const industriesContent = [
 
 <header
   id="main-header"
-  class="bg-[var(--color-background)] sticky top-0 z-50 transition-shadow transition-transform duration-500 ease-in-out"
+  class="bg-dark sticky top-0 z-50 transition-shadow transition-transform duration-500 ease-in-out"
 >
   <nav
-    class="container mx-auto px-6 py-4 flex justify-between items-center bg-dark"
+    class="container mx-auto px-6 py-4 flex justify-between items-center"
   >
     <div class="text-2xl font-bold">
-      <a href="/" class="text-white text-2xl font-bold"
-        >Tsurayya<span class="gradient-text">Engineering</span></a
+      <a href="/" class="text-white text-2xl font-bold flex flex-row"
+        ><img src="/favicon.svg" alt="tsurayya engineering" class="size-8"/>Tsurayya<span class="gradient-text">Engineering</span></a
       >
     </div>
-    <div class="flex space-x-4 items-center">
+        <div class="hidden md:flex space-x-4 items-center">
       <NavDropdown
         title="Solutions"
         content={solutionsContent}
@@ -120,13 +121,13 @@ const industriesContent = [
         content={industriesContent}
         description={industriesDescription}
       />
-      <a href="/about" class="text-white hover:text-[var(--color-primary)]"
+      <a href="/about" class="text-white hover:text-[var(--color-accent)]"
         >About</a
       >
-      <a href="/work" class="text-white hover:text-[var(--color-primary)]"
+      <a href="/work" class="text-white hover:text-[var(--color-accent)]"
         >Our Work</a
       >
-      <a href="/blog" class="text-white hover:text-[var(--color-primary)]"
+      <a href="/blog" class="text-white hover:text-[var(--color-accent)]"
         >Blog</a
       >
       <a
@@ -135,39 +136,99 @@ const industriesContent = [
         >Schedule a Call</a
       >
     </div>
+    <div class="md:hidden flex items-center">
+      <button id="mobile-menu-button" class="text-white focus:outline-none">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"></path></svg
+        >
+      </button>
+    </div>
   </nav>
+  <div id="mobile-menu" class="md:hidden" style="display: none;">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <NavDropdownMobile
+        title="Solutions"
+        content={solutionsContent}
+        description={solutionDescription}
+      />
+      <NavDropdownMobile
+        title="Technologies"
+        content={technologiesContent}
+        description={technologiesDescription}
+      />
+      <NavDropdownMobile
+        title="Industries"
+        content={industriesContent}
+        description={industriesDescription}
+      />
+      <a
+        href="/about"
+        class="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[var(--color-accent)]"
+        >About</a
+      >
+      <a
+        href="/work"
+        class="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[var(--color-accent)]"
+        >Our Work</a
+      >
+      <a
+        href="/blog"
+        class="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[var(--color-accent)]"
+        >Blog</a
+      >
+      <a
+        href="/contact"
+        class="bg-[var(--color-accent)] text-dark block px-3 py-2 rounded-full text-center text-base font-medium hover:opacity-90 cyber-button"
+        >Schedule a Call</a
+      >
+    </div>
+  </div>
 </header>
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
+    // Scroll behavior
     const header = document.getElementById("main-header");
-    let lastScrollTop = 0;
-    const scrollThreshold = 50;
+    if (header) {
+      let lastScrollTop = 0;
+      const scrollThreshold = 50;
+      header.classList.remove("-translate-y-full");
+      window.addEventListener("scroll", () => {
+        let currentScroll =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+          header.classList.add("-translate-y-full");
+          header.classList.remove("shadow-lg");
+        } else if (
+          currentScroll < lastScrollTop &&
+          currentScroll > scrollThreshold
+        ) {
+          header.classList.remove("-translate-y-full");
+          header.classList.add("shadow-lg");
+        } else if (currentScroll <= scrollThreshold) {
+          header.classList.remove("-translate-y-full");
+          header.classList.remove("shadow-lg");
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      });
+    }
 
-    // Show header initially
-    header.classList.remove("-translate-y-full");
-
-    window.addEventListener("scroll", () => {
-      let currentScroll =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
-        // Scrolling down past threshold
-        header.classList.add("-translate-y-full");
-        header.classList.remove("shadow-lg");
-      } else if (
-        currentScroll < lastScrollTop &&
-        currentScroll > scrollThreshold
-      ) {
-        // Scrolling up past threshold
-        header.classList.remove("-translate-y-full");
-        header.classList.add("shadow-lg");
-      } else if (currentScroll <= scrollThreshold) {
-        // At or near the top
-        header.classList.remove("-translate-y-full");
-        header.classList.remove("shadow-lg");
-      }
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-    });
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener("click", () => {
+        const isMenuOpen = mobileMenu.style.display === "block";
+        mobileMenu.style.display = isMenuOpen ? "none" : "block";
+      });
+    }
   });
 </script>

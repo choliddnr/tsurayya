@@ -1,7 +1,7 @@
 ---
 title: "Cloudflare"
 description: "A global network designed to make everything you connect to the Internet secure, private, fast, and reliable."
-icon: "fa6-brands:cloudflare"
+icon: "fa-brands fa-cloudflare"
 pros:
   - "Improved website performance through CDN and caching."
   - "Enhanced security with DDoS protection and WAF."
