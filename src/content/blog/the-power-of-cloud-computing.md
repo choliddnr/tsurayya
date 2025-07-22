@@ -3,6 +3,7 @@ title: 'The Power of Cloud Computing in 2025'
 description: 'An introduction to cloud computing and its evolution with AI, multi-cloud, and edge computing.'
 pubDate: 2025-07-21
 author: 'Cloudy McCloudface'
+authorTitle: 'Cloud Architect'
 image: '/blog/Cloud-Digital.webp'
 ---
 
@@ -20,3 +21,5 @@ The cloud is no longer just about storage and virtual machines. In 2025, the clo
 - **Serverless Computing:** Serverless computing allows developers to build and run applications without having to manage the underlying infrastructure. This approach offers greater scalability, flexibility, and cost-efficiency.
 
 These trends are making the cloud more powerful, flexible, and intelligent than ever before, enabling businesses to innovate faster and deliver better experiences to their customers.
+
+See how we leveraged the power of the cloud to build a [real-time analytics dashboard](/projects/analytics-dashboard) for a SaaS company.

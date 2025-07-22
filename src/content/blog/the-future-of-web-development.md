@@ -3,6 +3,7 @@ title: 'The Future of Web Development in 2025'
 description: 'Exploring the latest trends and technologies shaping the future of web development, from AI to WebAssembly.'
 pubDate: 2025-07-21
 author: 'John Doe'
+authorTitle: 'Senior Developer'
 image: '/blog/The-Future-Of-Web-Development.webp'
 ---
 
@@ -21,3 +22,5 @@ WebAssembly (Wasm) is a new technology that's enabling near-native performance f
 ## The Headless Revolution Continues
 
 The headless CMS continues to be a dominant trend in web development. By decoupling the content backend from the presentation layer, headless CMSs provide greater flexibility, scalability, and performance. This approach allows developers to use their preferred frontend frameworks and deliver content to any device or channel.
+
+See how we used a headless approach to build a scalable [e-commerce platform](/projects/e-commerce-platform) with AI-powered recommendations.

@@ -3,6 +3,7 @@ title: 'A Modern Guide to Agile Development'
 description: "Learn the fundamentals of the Agile methodology and how it's evolving with AI and DevSecOps to help your team build better products faster."
 pubDate: 2025-07-21
 author: 'Bob Builder'
+authorTitle: 'Lead Developer'
 image: '/blog/Agile-Software-Development.webp'
 ---
 
@@ -27,3 +28,5 @@ While the core principles of Agile remain, the practice of Agile is evolving. Tw
 - **DevSecOps:** Security is no longer an afterthought. DevSecOps integrates security into every stage of the development lifecycle, ensuring that products are both secure and delivered quickly.
 
 By embracing these trends, agile teams can not only deliver value faster but also build more secure, high-quality products.
+
+See how we applied agile principles to deliver a complex [enterprise dashboard](/projects/enterprise-dashboard) for a Fortune 500 company.

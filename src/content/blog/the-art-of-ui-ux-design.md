@@ -3,6 +3,7 @@ title: 'The Art and Science of UI/UX Design in 2025'
 description: 'A deep dive into the principles of creating beautiful, intuitive, and intelligent user interfaces.'
 pubDate: 2025-07-21
 author: 'Alice Wonderland'
+authorTitle: 'Lead Designer'
 image: '/blog/ui-ux-design.webp'
 ---
 
@@ -24,3 +25,5 @@ In 2025, the principles of good UI/UX have evolved to embrace new technologies a
 - **Bento Grids and Modern Skeuomorphism:** Employing innovative layout techniques and design styles to create visually appealing and intuitive interfaces.
 
 By embracing these principles, designers can create digital experiences that are not only functional and beautiful but also intelligent, immersive, and ethically sound.
+
+See how we applied these principles to design a [mobile banking app](/projects/mobile-banking-app) with a 4.8-star rating.

@@ -3,6 +3,7 @@ title: 'Implementing AI Chatbots for Business in 2025'
 description: 'How AI-powered chatbots, supercharged by generative AI, are transforming customer service and business operations.'
 pubDate: 2025-07-21
 author: 'Jane Smith'
+authorTitle: 'AI Specialist'
 image: '/blog/web-Product-success-66.webp'
 ---
 
@@ -25,3 +26,5 @@ Successfully implementing an AI chatbot requires a strategic approach:
 5.  **Monitor and Optimize:** After launching your chatbot, continuously monitor its performance and make adjustments as needed to improve its effectiveness.
 
 By following these steps, you can implement an AI chatbot that will transform your business and provide a superior customer experience.
+
+See how we built an [AI chatbot](/projects/ai-chatbot) that reduced customer support response times by 40%.

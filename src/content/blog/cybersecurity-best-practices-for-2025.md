@@ -3,6 +3,7 @@ title: 'Cybersecurity Best Practices for 2025'
 description: 'Essential security measures every business should implement to protect their data in the evolving digital landscape.'
 pubDate: 2025-07-21
 author: 'Peter Jones'
+authorTitle: 'Security Specialist'
 image: '/blog/cyber-security-best-practice.webp'
 ---
 
@@ -22,3 +23,5 @@ Here are the essential cybersecurity measures that every business must implement
 - **Foster a Security-First Culture:** Conduct regular, engaging cybersecurity training for all employees to build a human firewall against social engineering attacks.
 - **Secure Your Cloud Environments:** Implement robust cloud security posture management (CSPM) and workload protection (CWPP) to secure your cloud infrastructure.
 - **Adopt Advanced Endpoint Detection and Response (EDR):** Go beyond traditional antivirus with EDR solutions that provide deeper visibility and response capabilities for endpoints.
+
+Learn how we implemented these best practices to build a secure, [HIPAA-compliant healthcare platform](/projects/healthcare-platform).
