@@ -1,94 +1,95 @@
 ---
-import NavDropdown from "./NavDropdown.astro";
-import NavDropdownMobile from "./NavDropdownMobile.astro";
+import NavDropdown from './NavDropdown.astro';
+import NavDropdownMobile from './NavDropdownMobile.astro';
 
 const solutionDescription = {
   primary:
-    "We craft scalable digital solutions tailored to real-world business challenges.",
+    'We craft scalable digital solutions tailored to real-world business challenges.',
   secondary:
-    "From websites to AI-powered systems, our solutions are built to solve problems and deliver results.",
+    'From websites to AI-powered systems, our solutions are built to solve problems and deliver results.',
 };
 const solutionsContent = [
   {
-    title: "AI & Automation",
-    href: "/services",
-    description: "Boost efficiency with smart chatbots and workflows.",
+    title: 'AI & Automation',
+    href: '/services',
+    description: 'Boost efficiency with smart chatbots and workflows.',
   },
   {
-    title: "Web Development",
-    href: "/services",
-    description: "Custom websites and web apps tailored to your goals.",
+    title: 'Web Development',
+    href: '/services',
+    description: 'Custom websites and web apps tailored to your goals.',
   },
   {
-    title: "Infrastructure",
-    href: "/services",
-    description: "Reliable, secure, and scalable system setups.",
+    title: 'Infrastructure',
+    href: '/services',
+    description: 'Reliable, secure, and scalable system setups.',
   },
   {
-    title: "Business Tools",
-    href: "/services",
-    description: "Lead gen, client portals, and internal dashboards.",
+    title: 'Business Tools',
+    href: '/services',
+    description: 'Lead gen, client portals, and internal dashboards.',
   },
 ];
 
 const technologiesDescription = {
-  primary: "We choose proven, modern technologies trusted by the industry.",
+  primary: 'We choose proven, modern technologies trusted by the industry.',
   secondary:
-    "Our stack is carefully selected for performance, scalability, and long-term reliability.",
+    'Our stack is carefully selected for performance, scalability, and long-term reliability.',
 };
 const technologiesContent = [
   {
-    title: "Frontend",
-    href: "/technologies",
-    description: "Nuxt 3, Vue3, Astrojs, Tailwind CSS, AlpineJS — fast & responsive.",
+    title: 'Frontend',
+    href: '/technologies',
+    description:
+      'Nuxt 3, Vue3, Astrojs, Tailwind CSS, AlpineJS — fast & responsive.',
   },
   {
-    title: "Backend",
-    href: "/technologies",
-    description: "Node.js, Bun, PocketBase for powerful APIs.",
+    title: 'Backend',
+    href: '/technologies',
+    description: 'Node.js, Bun, PocketBase for powerful APIs.',
   },
   {
-    title: "AI Tools",
-    href: "/technologies",
-    description: "GPT, n8n, Langchain for automation and insight.",
+    title: 'AI Tools',
+    href: '/technologies',
+    description: 'GPT, n8n, Langchain for automation and insight.',
   },
   {
-    title: "DevOps & Infra",
-    href: "/technologies",
-    description: "Docker, Nginx, Kubernetes for modern deployment.",
+    title: 'DevOps & Infra',
+    href: '/technologies',
+    description: 'Docker, Nginx, Kubernetes for modern deployment.',
   },
 ];
 
 const industriesDescription = {
-  primary: "We serve diverse industries with custom-fit digital tools.",
+  primary: 'We serve diverse industries with custom-fit digital tools.',
   secondary:
-    "No matter your field, we adapt technology to meet your goals and speak your language.",
+    'No matter your field, we adapt technology to meet your goals and speak your language.',
 };
 const industriesContent = [
   {
-    title: "Food & Beverage",
-    href: "/industries",
-    description: "Menu tools, ordering systems, AI waiters.",
+    title: 'Food & Beverage',
+    href: '/industries',
+    description: 'Menu tools, ordering systems, AI waiters.',
   },
   {
-    title: "Retail & eCommerce",
-    href: "/industries",
-    description: "Inventory tracking, chat-order bots, storefronts.",
+    title: 'Retail & eCommerce',
+    href: '/industries',
+    description: 'Inventory tracking, chat-order bots, storefronts.',
   },
   {
-    title: "Agencies",
-    href: "/industries",
-    description: "Portals, automation, and smart reporting tools.",
+    title: 'Agencies',
+    href: '/industries',
+    description: 'Portals, automation, and smart reporting tools.',
   },
   {
-    title: "Health & Wellness",
-    href: "/industries",
-    description: "Booking, support agents, and custom dashboards.",
+    title: 'Health & Wellness',
+    href: '/industries',
+    description: 'Booking, support agents, and custom dashboards.',
   },
   {
-    title: "Education",
-    href: "/industries",
-    description: "AI tutors, course systems, certification portals.",
+    title: 'Education',
+    href: '/industries',
+    description: 'AI tutors, course systems, certification portals.',
   },
 ];
 ---
@@ -97,15 +98,17 @@ const industriesContent = [
   id="main-header"
   class="bg-dark sticky top-0 z-50 transition-shadow transition-transform duration-500 ease-in-out"
 >
-  <nav
-    class="container mx-auto px-6 py-4 flex justify-between items-center"
-  >
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
     <div class="text-2xl font-bold">
       <a href="/" class="text-white text-2xl font-bold flex flex-row"
-        ><img src="/favicon.svg" alt="tsurayya engineering" class="size-8"/>Tsurayya<span class="gradient-text">Engineering</span></a
+        ><img
+          src="/favicon.svg"
+          alt="tsurayya engineering"
+          class="size-8"
+        />Tsurayya<span class="gradient-text">Engineering</span></a
       >
     </div>
-        <div class="hidden md:flex space-x-4 items-center">
+    <div class="hidden md:flex space-x-4 items-center">
       <NavDropdown
         title="Solutions"
         content={solutionsContent}
@@ -195,39 +198,39 @@ const industriesContent = [
 </header>
 
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     // Scroll behavior
-    const header = document.getElementById("main-header");
+    const header = document.getElementById('main-header');
     if (header) {
       let lastScrollTop = 0;
       const scrollThreshold = 50;
-      header.classList.remove("-translate-y-full");
-      window.addEventListener("scroll", () => {
-        let currentScroll =
+      header.classList.remove('-translate-y-full');
+      window.addEventListener('scroll', () => {
+        const currentScroll =
           window.pageYOffset || document.documentElement.scrollTop;
         if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
-          header.classList.add("-translate-y-full");
-          header.classList.remove("shadow-lg");
+          header.classList.add('-translate-y-full');
+          header.classList.remove('shadow-lg');
         } else if (
           currentScroll < lastScrollTop &&
           currentScroll > scrollThreshold
         ) {
-          header.classList.remove("-translate-y-full");
-          header.classList.add("shadow-lg");
+          header.classList.remove('-translate-y-full');
+          header.classList.add('shadow-lg');
         } else if (currentScroll <= scrollThreshold) {
-          header.classList.remove("-translate-y-full");
-          header.classList.remove("shadow-lg");
+          header.classList.remove('-translate-y-full');
+          header.classList.remove('shadow-lg');
         }
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
       });
     }
 
-    const mobileMenuButton = document.getElementById("mobile-menu-button");
-    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener("click", () => {
-        const isMenuOpen = mobileMenu.style.display === "block";
-        mobileMenu.style.display = isMenuOpen ? "none" : "block";
+      mobileMenuButton.addEventListener('click', () => {
+        const isMenuOpen = mobileMenu.style.display === 'block';
+        mobileMenu.style.display = isMenuOpen ? 'none' : 'block';
       });
     }
   });

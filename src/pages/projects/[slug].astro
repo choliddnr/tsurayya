@@ -1,9 +1,9 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
+  const projects = await getCollection('projects');
   return projects.map((project) => ({
     params: { slug: project.slug },
     props: { project },
@@ -25,14 +25,20 @@ const { Content } = await project.render();
           {project.data.description}
         </p>
         <div class="mt-4 flex flex-wrap justify-center gap-2">
-          {project.data.technologies.map((tech) => (
-            <span class="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary">
-              {tech}
-            </span>
-          ))}
+          {
+            project.data.technologies.map((tech) => (
+              <span class="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary">
+                {tech}
+              </span>
+            ))
+          }
         </div>
       </div>
-      <img src={project.data.image} alt={project.data.title} class="w-full h-auto rounded-lg mb-8" />
+      <img
+        src={project.data.image}
+        alt={project.data.title}
+        class="w-full h-auto rounded-lg mb-8"
+      />
       <div class="prose prose-invert mx-auto">
         <Content />
       </div>

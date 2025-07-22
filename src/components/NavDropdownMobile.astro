@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 
 interface Props {
   title: string;
@@ -23,7 +23,8 @@ const { title, content, description } = Astro.props;
   </button>
   <div
     class="bg-dark-hover rounded-md mt-2 py-2 px-3 space-y-1"
-    data-mobile-dropdown-menu style="display: none;"
+    data-mobile-dropdown-menu
+    style="display: none;"
   >
     <div class="py-2">
       <p class="text-sm text-light opacity-80 mb-2">
@@ -49,13 +50,15 @@ const { title, content, description } = Astro.props;
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const dropdownToggles = document.querySelectorAll('[data-mobile-dropdown-toggle]');
+    const dropdownToggles = document.querySelectorAll(
+      '[data-mobile-dropdown-toggle]'
+    );
 
-    dropdownToggles.forEach(toggle => {
+    dropdownToggles.forEach((toggle) => {
       const menu = toggle.nextElementSibling;
       toggle.addEventListener('click', () => {
-        const isMenuOpen = menu!.style.display === "block";
-        menu!.style.display = isMenuOpen ? "none" : "block";
+        const isMenuOpen = menu!.style.display === 'block';
+        menu!.style.display = isMenuOpen ? 'none' : 'block';
         toggle.setAttribute('data-state', isMenuOpen ? 'closed' : 'open');
       });
     });

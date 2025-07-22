@@ -1,8 +1,8 @@
 ---
-title: "Enterprise Dashboard"
-description: "Data visualization and business intelligence platform"
-image: "https://images.unsplash.com/photo-1573164713714-95ce9ad6e165?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
-technologies: ["Vue.js", "Python", "PostgreSQL"]
+title: 'Enterprise Dashboard'
+description: 'Data visualization and business intelligence platform'
+image: 'https://images.unsplash.com/photo-1573164713714-95ce9ad6e165?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80'
+technologies: ['Vue.js', 'Python', 'PostgreSQL']
 ---
 
 ## Project Overview
@@ -11,18 +11,18 @@ This project involved the development of a comprehensive enterprise dashboard de
 
 ## Key Features
 
-*   **Interactive Dashboards:** Customizable widgets and charts for key performance indicators (KPIs).
-*   **Data Integration:** Seamless integration with multiple internal and external data sources.
-*   **Reporting Tools:** Generation of detailed reports with various filtering options.
-*   **User Management:** Role-based access control for different levels of data visibility.
-*   **Real-time Updates:** Live data feeds for up-to-the-minute insights.
+- **Interactive Dashboards:** Customizable widgets and charts for key performance indicators (KPIs).
+- **Data Integration:** Seamless integration with multiple internal and external data sources.
+- **Reporting Tools:** Generation of detailed reports with various filtering options.
+- **User Management:** Role-based access control for different levels of data visibility.
+- **Real-time Updates:** Live data feeds for up-to-the-minute insights.
 
 ## Technologies Used
 
-*   **Frontend:** Vue.js for a reactive and efficient user interface.
-*   **Backend:** Python with FastAPI for a high-performance API.
-*   **Database:** PostgreSQL for reliable and structured data storage.
-*   **Data Visualization:** Custom D3.js charts and graphs.
+- **Frontend:** Vue.js for a reactive and efficient user interface.
+- **Backend:** Python with FastAPI for a high-performance API.
+- **Database:** PostgreSQL for reliable and structured data storage.
+- **Data Visualization:** Custom D3.js charts and graphs.
 
 ## Challenges and Solutions
 

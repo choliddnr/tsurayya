@@ -1,0 +1,10 @@
+# Allow all user agents to crawl the entire site
+User-agent: *
+Allow: /
+
+# Disallow crawling of the legal and support pages
+Disallow: /legal/
+Disallow: /support/
+
+# Sitemap location
+Sitemap: https://www.tsurayya.com/sitemap-index.xml

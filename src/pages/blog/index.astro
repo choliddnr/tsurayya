@@ -1,8 +1,12 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Blog from "../../components/Blog.astro";
+import Layout from '../../layouts/Layout.astro';
+import Blog from '../../components/Blog.astro';
+import Search from '../../components/Search.astro';
 ---
 
 <Layout title="Blog">
+  <div class="container mx-auto py-8">
+    <Search />
+  </div>
   <Blog />
 </Layout>
