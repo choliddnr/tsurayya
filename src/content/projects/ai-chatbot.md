@@ -1,8 +1,8 @@
 ---
-title: "AI Chatbot"
-description: "Customer support automation with natural language processing"
-image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
-technologies: ["TensorFlow", "Node.js", "WebSocket"]
+title: 'AI Chatbot'
+description: 'Customer support automation with natural language processing'
+image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80'
+technologies: ['TensorFlow', 'Node.js', 'WebSocket']
 ---
 
 ## Project Overview
@@ -11,18 +11,18 @@ This project focused on developing an AI-powered chatbot to automate customer su
 
 ## Key Features
 
-*   **Natural Language Understanding (NLU):** Ability to understand and interpret user queries.
-*   **Contextual Conversations:** Maintaining conversation context for more natural interactions.
-*   **Integration with CRM:** Seamless handover to human agents with full conversation history.
-*   **Multi-channel Support:** Deployment across various platforms (website, messaging apps).
-*   **Analytics & Reporting:** Insights into chatbot performance and user interactions.
+- **Natural Language Understanding (NLU):** Ability to understand and interpret user queries.
+- **Contextual Conversations:** Maintaining conversation context for more natural interactions.
+- **Integration with CRM:** Seamless handover to human agents with full conversation history.
+- **Multi-channel Support:** Deployment across various platforms (website, messaging apps).
+- **Analytics & Reporting:** Insights into chatbot performance and user interactions.
 
 ## Technologies Used
 
-*   **AI/ML:** TensorFlow for building and training the NLU model.
-*   **Backend:** Node.js for the chatbot's core logic and API.
-*   **Communication:** WebSocket for real-time, bidirectional communication.
-*   **Database:** MongoDB for storing conversation logs and user data.
+- **AI/ML:** TensorFlow for building and training the NLU model.
+- **Backend:** Node.js for the chatbot's core logic and API.
+- **Communication:** WebSocket for real-time, bidirectional communication.
+- **Database:** MongoDB for storing conversation logs and user data.
 
 ## Challenges and Solutions
 

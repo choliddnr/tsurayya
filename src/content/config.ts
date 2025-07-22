@@ -31,7 +31,7 @@ const technologyCollection = defineCollection({
 });
 
 export const collections = {
-  'blog': blogCollection,
-  'projects': projectCollection,
-  'technologies': technologyCollection,
+  blog: blogCollection,
+  projects: projectCollection,
+  technologies: technologyCollection,
 };

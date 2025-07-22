@@ -1,47 +1,49 @@
 ---
+
 ---
+
 <div
-    id="chatbox"
-    class="fixed bottom-8 right-8 w-80 bg-dark/90 backdrop-blur-md rounded-xl shadow-xl border border-accent/30 transform transition-all duration-300 ease-in-out translate-y-4 opacity-0 hidden"
+  id="chatbox"
+  class="fixed bottom-8 right-8 w-80 bg-dark/90 backdrop-blur-md rounded-xl shadow-xl border border-accent/30 transform transition-all duration-300 ease-in-out translate-y-4 opacity-0 hidden"
+>
+  <div
+    class="flex items-center justify-between px-4 py-3 bg-primary/10 border-b border-accent/20 rounded-t-xl"
   >
-    <div
-      class="flex items-center justify-between px-4 py-3 bg-primary/10 border-b border-accent/20 rounded-t-xl"
-    >
-      <h3 class="text-white font-medium">Chat with us</h3>
-      <button id="close-chat" class="text-white/70 hover:text-white">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <div id="chat-messages" class="h-64 p-4 overflow-y-auto">
-      <div class="chat-message mb-4">
-        <div class="bg-primary/10 text-white rounded-lg p-3 max-w-xs">
-          <p>Hello! How can I help you today?</p>
-          <p class="text-xs text-white/50 mt-1">AI Assistant</p>
-        </div>
-      </div>
-    </div>
-    <div class="p-3 border-t border-accent/20">
-      <div class="flex">
-        <input
-          type="text"
-          id="chat-input"
-          placeholder="Type your message..."
-          class="flex-1 bg-dark/50 border border-white/10 rounded-l-lg px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-accent"
-        />
-        <button
-          id="send-message"
-          class="bg-accent text-dark px-4 py-2 rounded-r-lg hover:bg-accent/90 transition-colors"
-        >
-          <i class="fas fa-paper-plane"></i>
-        </button>
+    <h3 class="text-white font-medium">Chat with us</h3>
+    <button id="close-chat" class="text-white/70 hover:text-white">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div id="chat-messages" class="h-64 p-4 overflow-y-auto">
+    <div class="chat-message mb-4">
+      <div class="bg-primary/10 text-white rounded-lg p-3 max-w-xs">
+        <p>Hello! How can I help you today?</p>
+        <p class="text-xs text-white/50 mt-1">AI Assistant</p>
       </div>
     </div>
   </div>
+  <div class="p-3 border-t border-accent/20">
+    <div class="flex">
+      <input
+        type="text"
+        id="chat-input"
+        placeholder="Type your message..."
+        class="flex-1 bg-dark/50 border border-white/10 rounded-l-lg px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-accent"
+      />
+      <button
+        id="send-message"
+        class="bg-accent text-dark px-4 py-2 rounded-r-lg hover:bg-accent/90 transition-colors"
+      >
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
-  <!-- Chat Toggle Button -->
-  <button
-    id="chat-toggle"
-    class="fixed bottom-8 right-8 w-14 h-14 rounded-full bg-accent text-dark shadow-lg hover:bg-accent/90 transition-colors flex items-center justify-center"
-  >
-    <i class="fas fa-comment-dots text-xl"></i>
-  </button>
+<!-- Chat Toggle Button -->
+<button
+  id="chat-toggle"
+  class="fixed bottom-8 right-8 w-14 h-14 rounded-full bg-accent text-dark shadow-lg hover:bg-accent/90 transition-colors flex items-center justify-center"
+>
+  <i class="fas fa-comment-dots text-xl"></i>
+</button>

@@ -8,7 +8,10 @@ interface Props {
 const { phrases, speed = 100, delay = 1500 } = Astro.props;
 ---
 
-<span id="typewriter-text" class="font-bold"></span><span id="cursor" class="blinking-cursor">_</span>
+<span id="typewriter-text" class="font-bold"></span><span
+  id="cursor"
+  class="blinking-cursor">_</span
+>
 
 <style>
   .blinking-cursor {
@@ -16,8 +19,13 @@ const { phrases, speed = 100, delay = 1500 } = Astro.props;
   }
 
   @keyframes blink {
-    from, to { opacity: 1; }
-    50% { opacity: 0; }
+    from,
+    to {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
   }
 </style>
 

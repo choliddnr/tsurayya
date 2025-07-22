@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
 /* @tailwind base;
@@ -8,12 +8,12 @@
 @tailwind utilities;
 
 @theme {
-  --font-sans: "Space Grotesk", sans-serif;
-  --font-mono: "Space Mono", monospace;
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Mono', monospace;
   --color-primary: #0066ff;
   --color-secondary: #0044cc;
   --color-accent: #00f0ff;
-  --color-dark: #13132d;  /*  #0a0a1a */
+  --color-dark: #13132d; /*  #0a0a1a */
   --color-light: #f0f4ff;
   --color-cyber: #ff00aa;
   --color-tech: #0ff0fc;
@@ -88,7 +88,8 @@ body {
 
 /* You can add your global styles here */
 .shadow-on-scroll {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   opacity: 1;
 }
@@ -98,7 +99,8 @@ body {
 }
 
 .tech-grid-bg {
-  background-image: linear-gradient(rgba(0, 102, 255, 0.1) 1px, transparent 1px),
+  background-image:
+    linear-gradient(rgba(0, 102, 255, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 102, 255, 0.1) 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: -1px -1px;
@@ -132,7 +134,7 @@ body {
 }
 
 .animated-underline::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 0;
   height: 2px;
@@ -192,7 +194,7 @@ body {
 }
 
 .cyber-button::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: -100%;
@@ -216,10 +218,8 @@ body {
 }
 
 .grid-pattern {
-  background-image: linear-gradient(
-      rgba(0, 102, 255, 0.05) 1px,
-      transparent 1px
-    ),
+  background-image:
+    linear-gradient(rgba(0, 102, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 102, 255, 0.05) 1px, transparent 1px);
   background-size: 30px 30px;
 }
@@ -254,7 +254,6 @@ body {
   border-radius: 3px;
 }
 
-
 /* For mobile menu */
 @media (max-width: 768px) {
   .desktop-nav {
@@ -283,7 +282,9 @@ body {
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.1em;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing {
@@ -325,7 +326,9 @@ body {
 }
 
 .testimonial-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .testimonial-card:hover {
