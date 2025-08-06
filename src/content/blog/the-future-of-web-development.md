@@ -5,6 +5,7 @@ pubDate: 2025-07-21
 author: 'John Doe'
 authorTitle: 'Senior Developer'
 image: '/blog/The-Future-Of-Web-Development.webp'
+featured: true
 ---
 
 ## The AI-Powered Web

@@ -3,6 +3,10 @@ title: 'Scalable E-commerce Platform with AI Recommendations'
 description: 'Building a high-performance e-commerce platform that increased average order value by 15% through AI-powered personalization.'
 image: '/blog/e-commerce-platform.jpg'
 technologies: ['React', 'Node.js', 'MongoDB', 'AI']
+testimonial:
+  text: 'Tsurayya Engineering delivered a game-changing platform for our business. The AI recommendations have been a huge success, and the new site is incredibly fast and reliable.'
+  author: 'Jane Doe'
+  title: 'CEO, Fashion Retailer'
 ---
 
 ### The Challenge
