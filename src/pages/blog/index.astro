@@ -1,12 +1,103 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Blog from '../../components/Blog.astro';
-import Search from '../../components/Search.astro';
+import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
-<Layout title="Blog">
-  <div class="container mx-auto py-8">
-    <Search />
-  </div>
-  <Blog />
+<Layout title="Blog | Tsurayya">
+  <section id="blog-page" class="py-20 bg-dark/50 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
+          Our <span class="gradient-text">Blog</span>
+        </h1>
+        <p class="mt-4 max-w-3xl text-xl text-white/70 mx-auto">
+          Insights, tutorials, and updates from our team of experts. Explore our latest articles.
+        </p>
+      </div>
+
+      <div class="mt-12 mb-16 max-w-2xl mx-auto">
+        <div class="relative">
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Search articles by title or description..."
+            class="w-full p-4 pl-14 text-lg text-white bg-dark/50 border-2 border-white/10 rounded-full focus:ring-accent focus:border-accent transition-colors duration-300"
+          />
+          <div class="absolute inset-y-0 left-0 flex items-center pl-5 pointer-events-none">
+            <Icon name="heroicons:magnifying-glass" class="w-6 h-6 text-white/50" />
+          </div>
+        </div>
+      </div>
+
+      <div id="blog-posts" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => (
+          <div class="post-item bg-dark/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-white/5 hover:border-accent/30 transition-all duration-300 h-full flex flex-col" data-title={post.data.title.toLowerCase()} data-description={post.data.description.toLowerCase()}>
+            <a href={`/blog/${post.slug}`} class="flex flex-col h-full">
+              <div class="h-48 relative overflow-hidden">
+                <img
+                  src={post.data.image}
+                  alt={post.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent" />
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                <div class="flex items-center text-sm text-white/60 mb-3">
+                  <span>{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                  <span class="mx-2">•</span>
+                  <span>{post.data.author}</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3 flex-grow">
+                  {post.data.title}
+                </h3>
+                <p class="text-white/70 mb-4 text-base">{post.data.description}</p>
+                <div class="mt-auto text-accent hover:text-accent/80 text-sm font-medium inline-flex items-center">
+                  Read more
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+      <div id="no-results" class="text-center py-16" style="display: none;">
+        <h3 class="text-2xl font-bold text-white">No Results Found</h3>
+        <p class="text-white/70 mt-2">Try adjusting your search terms.</p>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const blogPostsContainer = document.getElementById('blog-posts');
+      if (!searchInput || !blogPostsContainer) return;
+
+      const postItems = Array.from(blogPostsContainer.querySelectorAll('.post-item'));
+      const noResultsMessage = document.getElementById('no-results');
+
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        let resultsFound = false;
+
+        postItems.forEach(item => {
+          const title = item.dataset.title || '';
+          const description = item.dataset.description || '';
+
+          const isVisible = title.includes(query) || description.includes(query);
+          item.style.display = isVisible ? '' : 'none';
+          if(isVisible) resultsFound = true;
+        });
+
+        if (noResultsMessage) {
+          noResultsMessage.style.display = resultsFound ? 'none' : 'block';
+        }
+      });
+    });
+  </script>
 </Layout>
