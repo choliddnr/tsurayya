@@ -1,23 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
 import { getCollection } from 'astro:content';
 
 const technologies = await getCollection('technologies');
 ---
 
 <Layout title="Our Technologies">
-  <section class="py-20">
+  <PageHero
+    title="Our <span class='gradient-text'>Technologies</span>"
+    description="We work with the most advanced and in-demand technologies across industries."
+  />
+  <section id="technologies" class="pb-20 bg-dark/50 backdrop-blur-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-          Our <span class="gradient-text">Technologies</span>
-        </h1>
-        <p class="mt-4 max-w-2xl text-xl text-white/70 mx-auto">
-          We work with the most advanced and in-demand technologies across
-          industries.
-        </p>
-      </div>
-
       <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {
           technologies.map((tech) => (

@@ -1,19 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
 ---
 
 <Layout title="Careers at Tsurayya">
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-          Join Our <span class="gradient-text">Team</span>
-        </h1>
-        <p class="mt-4 max-w-2xl text-xl text-white/70 mx-auto">
-          We're always looking for talented individuals to join our growing
-          team.
-        </p>
-      </div>
+  <PageHero
+    title="Join Our <span class='gradient-text'>Team</span>"
+    description="We're always looking for talented individuals to join our growing team."
+  />
 
       <div class="mt-16">
         <h2 class="text-3xl font-extrabold text-white text-center">
