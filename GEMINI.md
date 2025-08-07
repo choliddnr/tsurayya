@@ -10,6 +10,10 @@ This document provides guidelines for agentic coding agents working in this repo
 
 _Note: There are no specified linting or testing commands. Please maintain existing code style and quality._
 
+## Git Usage Guidelines
+
+- **No Direct Commits:** Agents should not execute `git commit` commands directly. All changes should be staged and a draft commit message provided for user review and approval.
+
 ## Code Style Guidelines
 
 - **Framework:** Astro
