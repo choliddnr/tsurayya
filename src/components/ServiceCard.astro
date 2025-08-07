@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon';
 const { title, description, icon } = Astro.props;
 ---
 
@@ -8,21 +9,7 @@ const { title, description, icon } = Astro.props;
   {
     icon && (
       <div class="text-4xl text-[var(--color-primary)] mb-4">
-        {/* Placeholder SVG icon */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-10 w-10 mx-auto"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M13 10V3L4 14h7v7l9-11h-7z"
-          />
-        </svg>
+        <Icon name={icon} class="h-10 w-10 mx-auto" />
       </div>
     )
   }
