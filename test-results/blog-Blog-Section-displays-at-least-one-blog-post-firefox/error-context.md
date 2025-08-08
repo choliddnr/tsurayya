@@ -1,0 +1,243 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - navigation:
+    - link "tsurayya engineering Tsurayya Engineering":
+      - /url: /
+      - img "tsurayya engineering"
+      - text: Tsurayya Engineering
+    - button "Solutions":
+      - text: Solutions
+      - img
+    - button "Technologies":
+      - text: Technologies
+      - img
+    - button "Industries":
+      - text: Industries
+      - img
+    - link "About":
+      - /url: /about
+    - link "Our Work":
+      - /url: /work
+    - link "Blog":
+      - /url: /blog
+    - link "Schedule a Call":
+      - /url: /contact
+- main:
+  - heading "Build, Scale, and Innovate With a Trusted Partner" [level=1]
+  - paragraph: We build cutting-edge digital solutions with AI integration, scalable infrastructure, and exceptional user experiences.
+  - link "Let's Build Something Amazing":
+    - /url: "#contact"
+  - link "Explore Our AI Solutions":
+    - /url: "#services"
+  - text: 
+  - heading "AI Assistant" [level=3]
+  - paragraph: How can I help you today?
+  - paragraph: Hello! I'm your AI assistant. Ask me about our services or request a consultation.
+  - text:  
+  - heading "Custom Website & Web App Development" [level=3]
+  - paragraph: From landing pages to complex web platforms, we design and develop tailored digital experiences that drive growth and engagement.
+  - list:
+    - listitem:  Fully responsive design
+    - listitem:  Backend/API development
+    - listitem:  Admin dashboards
+    - listitem:  eCommerce platforms
+    - listitem:  Progressive Web Apps (PWA)
+  - text:  
+  - heading "AI Integration & Automation" [level=3]
+  - paragraph: Put AI to work for you. We build AI-powered tools to boost your productivity by up to 40% and unlock new data-driven insights.
+  - list:
+    - listitem:  AI Chatbots (support, sales, onboarding)
+    - listitem:  Workflow automation (e.g., using n8n or Zapier)
+    - listitem:  Custom AI agents for business intelligence
+    - listitem:  Integration with GPT, Claude, and open-source models
+  - text:  
+  - heading "Infrastructure Management" [level=3]
+  - paragraph: We manage the tech foundation so your business runs smoothly, securely, and efficiently, with 99.9% uptime.
+  - list:
+    - listitem:  Server setup & monitoring
+    - listitem:  Cloud & container deployment (Docker, Kubernetes)
+    - listitem:  Self-hosted or hybrid solutions
+    - listitem:  Database and storage optimization
+    - listitem:  Performance tuning & security hardening
+  - heading "Technologies We Master" [level=2]
+  - paragraph: We work with the most advanced and in-demand technologies across industries
+  - region:
+    - group "1 of 15":
+      - text: 
+      - heading "Node.js" [level=3]
+    - group "2 of 15":
+      - text: 
+      - heading "Python" [level=3]
+    - group "3 of 15":
+      - text: 
+      - heading "MongoDB" [level=3]
+    - group "4 of 15":
+      - text: 
+      - heading "AWS" [level=3]
+    - group "5 of 15":
+      - text: 
+      - heading "AI/ML" [level=3]
+    - group "6 of 15":
+      - text: 
+      - heading "TypeScript" [level=3]
+  - img "Tsurayya Engineering Team"
+  - text: 2+ Years of Experience
+  - heading "About Tsurayya Engineering" [level=2]
+  - paragraph: At Tsurayya Engineering, we are dedicated to transforming businesses through smart, scalable, and secure technology solutions. We are your partners in innovation, turning your vision into reality.
+  - paragraph: Our mission is to simplify technology and build custom software that solves real-world problems, allowing you to focus on growing your business while we handle the technical complexities.
+  - link "Learn More About Us":
+    - /url: /about
+    - text: Learn More About Us
+    - img
+  - heading "Why Choose Us" [level=2]
+  - paragraph: We deliver exceptional value through our unique approach
+  - text: 
+  - heading "Tech-First Approach" [level=3]
+  - paragraph: We don’t just build — we engineer scalable solutions.
+  - text: 
+  - heading "Security & Performance" [level=3]
+  - paragraph: We build with long-term reliability in mind.
+  - text: 
+  - heading "AI-Ready by Default" [level=3]
+  - paragraph: Future-proof your systems with automation and smart insights.
+  - text: 
+  - heading "Collaborative Workflow" [level=3]
+  - paragraph: Your goals become our roadmap.
+  - text: 
+  - heading "Results That Matter" [level=3]
+  - paragraph: From idea to impact, we focus on value.
+  - heading "How We Work" [level=2]
+  - paragraph: Our streamlined process ensures successful project delivery.
+  - heading "Discovery Call" [level=3]
+  - paragraph: We start with a detailed discussion to understand your vision, goals, and challenges.
+  - text: 
+  - heading "Proposal & Timeline" [level=3]
+  - paragraph: Based on our discussion, we craft a comprehensive proposal with a clear roadmap and deliverables.
+  - text: 
+  - heading "Build & Feedback Loops" [level=3]
+  - paragraph: We develop iteratively, incorporating your feedback at every stage to ensure alignment.
+  - text: 
+  - heading "Launch & Support" [level=3]
+  - paragraph: After rigorous testing, we launch your solution and provide ongoing support and maintenance.
+  - text: 
+  - heading "Our Work" [level=2]
+  - paragraph: Explore some of our recent projects and success stories.
+  - img "AI Chatbot for Customer Support"
+  - heading "AI Chatbot for Customer Support" [level=3]
+  - paragraph: Automating customer support with a custom-trained AI chatbot, resulting in a 40% reduction in response time.
+  - text: TensorFlow Node.js WebSocket MongoDB
+  - link "View case study ":
+    - /url: /projects/ai-chatbot
+  - img "Real-Time Analytics Dashboard"
+  - heading "Real-Time Analytics Dashboard" [level=3]
+  - paragraph: Empowering a SaaS company with real-time data visualization, leading to a 20% improvement in operational efficiency.
+  - text: D3.js BigQuery Looker Python
+  - link "View case study ":
+    - /url: /projects/analytics-dashboard
+  - img "Scalable E-commerce Platform with AI Recommendations"
+  - heading "Scalable E-commerce Platform with AI Recommendations" [level=3]
+  - paragraph: Building a high-performance e-commerce platform that increased average order value by 15% through AI-powered personalization.
+  - text: React Node.js MongoDB AI
+  - link "View case study ":
+    - /url: /projects/e-commerce-platform
+  - link "View Our Case Studies":
+    - /url: /projects
+  - heading "From Our Blog" [level=2]
+  - paragraph: Stay updated with the latest industry insights and company news.
+  - link "A Modern Guide to Agile Development July 21, 2025 A Modern Guide to Agile Development Learn the fundamentals of the Agile methodology and how it's evolving with AI and DevSecOps to help your team build better products faster. Read more":
+    - /url: /blog/a-guide-to-agile-development
+    - img "A Modern Guide to Agile Development"
+    - text: July 21, 2025
+    - heading "A Modern Guide to Agile Development" [level=3]
+    - paragraph: Learn the fundamentals of the Agile methodology and how it's evolving with AI and DevSecOps to help your team build better products faster.
+    - text: Read more
+    - img
+  - link "Cybersecurity Best Practices for 2025 July 21, 2025 Cybersecurity Best Practices for 2025 Essential security measures every business should implement to protect their data in the evolving digital landscape. Read more":
+    - /url: /blog/cybersecurity-best-practices-for-2025
+    - img "Cybersecurity Best Practices for 2025"
+    - text: July 21, 2025
+    - heading "Cybersecurity Best Practices for 2025" [level=3]
+    - paragraph: Essential security measures every business should implement to protect their data in the evolving digital landscape.
+    - text: Read more
+    - img
+  - link "Implementing AI Chatbots for Business in 2025 July 21, 2025 Implementing AI Chatbots for Business in 2025 How AI-powered chatbots, supercharged by generative AI, are transforming customer service and business operations. Read more":
+    - /url: /blog/implementing-ai-chatbots-for-business
+    - img "Implementing AI Chatbots for Business in 2025"
+    - text: July 21, 2025
+    - heading "Implementing AI Chatbots for Business in 2025" [level=3]
+    - paragraph: How AI-powered chatbots, supercharged by generative AI, are transforming customer service and business operations.
+    - text: Read more
+    - img
+  - link "View All Articles":
+    - /url: /blog
+  - heading "Get in Touch" [level=2]
+  - paragraph: Whether you're planning your next big project or need help improving an existing system, we’re here to help.
+  - text: 
+  - heading "Email:" [level=3]
+  - paragraph: hello@tsurayya.com
+  - text: 
+  - heading "Website:" [level=3]
+  - paragraph: www.tsurayya.com
+  - text: First name
+  - textbox "First name"
+  - text: Last name
+  - textbox "Last name"
+  - text: Email
+  - textbox "Email"
+  - text: Phone number
+  - textbox "Phone number"
+  - text: Message
+  - textbox "Message"
+  - button "Send Message"
+  - button ""
+- contentinfo:
+  - text: TsurayyaEngineering
+  - paragraph: Transforming businesses through innovative digital solutions.
+  - link "":
+    - /url: "#"
+  - link "":
+    - /url: "#"
+  - link "":
+    - /url: "#"
+  - link "":
+    - /url: "#"
+  - heading "Solutions" [level=3]
+  - link "Web Development":
+    - /url: /services
+  - link "AI Integration":
+    - /url: /services
+  - link "Cloud Services":
+    - /url: /services
+  - link "Data Analytics":
+    - /url: /services
+  - heading "Company" [level=3]
+  - link "About":
+    - /url: /about
+  - link "Careers":
+    - /url: /careers
+  - link "Blog":
+    - /url: /blog
+  - link "Contact":
+    - /url: /contact
+  - heading "Support" [level=3]
+  - link "Documentation":
+    - /url: /support/documentation
+  - link "Guides":
+    - /url: /support/guides
+  - link "API Status":
+    - /url: /support/api-status
+  - link "Live Chat":
+    - /url: /contact
+  - heading "Legal" [level=3]
+  - link "Privacy":
+    - /url: /legal/privacy
+  - link "Terms":
+    - /url: /legal/terms
+  - link "Cookie Policy":
+    - /url: /legal/cookie-policy
+  - link "Licenses":
+    - /url: /legal/licenses
+  - paragraph: © 2025 Tsurayya Engineering. All rights reserved.
+```
