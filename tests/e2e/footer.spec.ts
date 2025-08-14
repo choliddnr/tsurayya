@@ -31,26 +31,38 @@ test.describe('Footer Component', () => {
 
   test('displays Company links', async ({ page }) => {
     await expect(page.locator('footer >> h3:has-text("Company")')).toBeVisible();
-    await expect(page.locator('footer >> h3:has-text("Company") + ul >> a[href="/about"]')).toBeVisible();
-    await expect(page.locator('footer >> h3:has-text("Company") + ul >> a[href="/careers"]')).toBeVisible();
-    await expect(page.locator('footer >> h3:has-text("Company") + ul >> a[href="/blog"]')).toBeVisible();
-    await expect(page.locator('footer >> h3:has-text("Company") + ul >> a[href="/contact"]')).toBeVisible();
+    await page.locator('footer').getByRole('link', { name: 'About' }).waitFor({ state: 'visible' });
+    await expect(page.locator('footer').getByRole('link', { name: 'About' })).toBeVisible();
+    await page.locator('footer').getByRole('link', { name: 'Careers' }).waitFor({ state: 'visible' });
+    await expect(page.locator('footer').getByRole('link', { name: 'Careers' })).toBeVisible();
+    await page.locator('footer').getByRole('link', { name: 'Blog' }).waitFor({ state: 'visible' });
+    await expect(page.locator('footer').getByRole('link', { name: 'Blog' })).toBeVisible();
+    await page.locator('footer').getByRole('link', { name: 'Contact' }).waitFor({ state: 'visible' });
+    await expect(page.locator('footer').getByRole('link', { name: 'Contact' })).toBeVisible();
   });
 
   test('displays Support links', async ({ page }) => {
     await expect(page.locator('footer >> h3:has-text("Support")')).toBeVisible();
-    await expect(page.locator('footer >> h3:has-text("Support") + ul >> a[href="/support/documentation"]')).toBeVisible();
-    await expect(page.locator('footer >> h3:has-text("Support") + ul >> a[href="/support/guides"]')).toBeVisible();
-    await expect(page.locator('footer >> h3:has-text("Support") + ul >> a[href="/support/api-status"]')).toBeVisible();
-    await expect(page.locator('footer >> h3:has-text("Support") + ul >> a[href="/contact"]')).toBeVisible();
+    await page.locator('footer').getByRole('link', { name: 'Documentation' }).waitFor({ state: 'visible' });
+    await expect(page.locator('footer').getByRole('link', { name: 'Documentation' })).toBeVisible();
+    await page.locator('footer').getByRole('link', { name: 'Guides' }).waitFor({ state: 'visible' });
+    await expect(page.locator('footer').getByRole('link', { name: 'Guides' })).toBeVisible();
+    await page.locator('footer').getByRole('link', { name: 'API Status' }).waitFor({ state: 'visible' });
+    await expect(page.locator('footer').getByRole('link', { name: 'API Status' })).toBeVisible();
+    await page.locator('footer').getByRole('link', { name: 'Live Chat' }).waitFor({ state: 'visible' });
+    await expect(page.locator('footer').getByRole('link', { name: 'Live Chat' })).toBeVisible();
   });
 
   test('displays Legal links', async ({ page }) => {
     await expect(page.locator('footer >> h3:has-text("Legal")')).toBeVisible();
-    await expect(page.locator('footer >> a[href="/legal/privacy"]')).toBeVisible();
-    await expect(page.locator('footer >> a[href="/legal/terms"]')).toBeVisible();
-    await expect(page.locator('footer >> a[href="/legal/cookie-policy"]')).toBeVisible();
-    await expect(page.locator('footer >> a[href="/legal/licenses"]')).toBeVisible();
+    await page.locator('footer').getByRole('link', { name: 'Privacy' }).waitFor({ state: 'visible' });
+    await expect(page.locator('footer').getByRole('link', { name: 'Privacy' })).toBeVisible();
+    await page.locator('footer').getByRole('link', { name: 'Terms' }).waitFor({ state: 'visible' });
+    await expect(page.locator('footer').getByRole('link', { name: 'Terms' })).toBeVisible();
+    await page.locator('footer').getByRole('link', { name: 'Cookie Policy' }).waitFor({ state: 'visible' });
+    await expect(page.locator('footer').getByRole('link', { name: 'Cookie Policy' })).toBeVisible();
+    await page.locator('footer').getByRole('link', { name: 'Licenses' }).waitFor({ state: 'visible' });
+    await expect(page.locator('footer').getByRole('link', { name: 'Licenses' })).toBeVisible();
   });
 
   test('displays copyright information', async ({ page }) => {

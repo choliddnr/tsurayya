@@ -12,9 +12,12 @@ test.describe('Header Component', () => {
   });
 
   test('displays desktop navigation links', async ({ page }) => {
+    await page.locator('header nav >> button:has-text("Solutions")').waitFor({ state: 'visible' });
     await expect(page.locator('header nav >> button:has-text("Solutions")')).toBeVisible();
-    await expect(page.locator('header nav >> text=Technologies')).toBeVisible();
-    await expect(page.locator('header nav >> text=Industries')).toBeVisible();
+    await page.locator('header nav >> button:has-text("Technologies")').waitFor({ state: 'visible' });
+    await expect(page.locator('header nav >> button:has-text("Technologies")')).toBeVisible();
+    await page.locator('header nav >> button:has-text("Industries")').waitFor({ state: 'visible' });
+    await expect(page.locator('header nav >> button:has-text("Industries")')).toBeVisible();
     await expect(page.locator('header nav a[href="/about"]')).toBeVisible();
     await expect(page.locator('header nav a[href="/work"]')).toBeVisible();
     await expect(page.locator('header nav a[href="/blog"]')).toBeVisible();

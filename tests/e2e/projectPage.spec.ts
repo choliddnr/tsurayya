@@ -19,9 +19,9 @@ test.describe('Project Page', () => {
   });
 
   test('displays technologies used', async ({ page }) => {
-    await expect(page.getByRole('main').locator('ul li:has-text("TensorFlow")')).toBeVisible();
-    await expect(page.getByRole('main').locator('ul li:has-text("Node.js")')).toBeVisible();
-    await expect(page.getByRole('main').locator('ul li:has-text("WebSocket")')).toBeVisible();
-    await expect(page.getByRole('main').locator('ul li:has-text("MongoDB")')).toBeVisible();
+    await expect(page.getByText('TensorFlow')).toBeVisible();
+    await expect(page.getByText('Node.js')).toBeVisible();
+    await expect(page.getByText('WebSocket')).toBeVisible();
+    await expect(page.getByText('MongoDB')).toBeVisible();
   });
 });

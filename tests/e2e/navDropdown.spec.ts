@@ -11,7 +11,7 @@ test.describe('NavDropdown Component', () => {
     const solutionsDropdown = page.locator('header nav div.group:has(button:has-text("Solutions")) div[role="menu"]');
 
     await solutionsButton.hover();
-    await page.waitForTimeout(500);
+    await solutionsDropdown.waitFor({ state: 'visible' });
     await expect(solutionsDropdown).toBeVisible();
 
     await expect(solutionsDropdown.locator('h3:has-text("We craft scalable digital solutions tailored to real-world business challenges.")')).toBeVisible();
@@ -28,7 +28,7 @@ test.describe('NavDropdown Component', () => {
     const technologiesDropdown = page.locator('header nav div.group:has(button:has-text("Technologies")) div[role="menu"]');
 
     await technologiesButton.hover();
-    await page.waitForTimeout(500);
+    await technologiesDropdown.waitFor({ state: 'visible' });
     await expect(technologiesDropdown).toBeVisible();
 
     await expect(technologiesDropdown.locator('h3:has-text("We choose proven, modern technologies trusted by the industry.")')).toBeVisible();
@@ -45,7 +45,7 @@ test.describe('NavDropdown Component', () => {
     const industriesDropdown = page.locator('header nav div.group:has(button:has-text("Industries")) div[role="menu"]');
 
     await industriesButton.hover();
-    await page.waitForTimeout(500);
+    await industriesDropdown.waitFor({ state: 'visible' });
     await expect(industriesDropdown).toBeVisible();
 
     await expect(industriesDropdown.locator('h3:has-text("We serve diverse industries with custom-fit digital tools.")')).toBeVisible();
