@@ -5,7 +5,7 @@ pubDate: 2025-07-21
 author: 'Bob Builder'
 authorTitle: 'Lead Developer'
 image: '/blog/Agile-Software-Development.webp'
-featured: true
+featured: false
 ---
 
 ## What is Agile?

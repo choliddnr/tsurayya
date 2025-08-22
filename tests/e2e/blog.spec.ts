@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Blog Section', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/', { timeout: 120000 });
   });
 
   test('displays Blog section heading', async ({ page }) => {

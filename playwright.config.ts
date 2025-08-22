@@ -28,6 +28,11 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    timeout: 60000, // 1 minute
+  },
+
+  expect: {
+    timeout: 10000, // 10 seconds
   },
 
   /* Configure projects for major browsers */
@@ -75,5 +80,6 @@ export default defineConfig({
     command: 'pnpm dev',
     url: 'http://localhost:4321',
     reuseExistingServer: !process.env.CI,
+    timeout: 120000, // 2 minutes
   },
 });

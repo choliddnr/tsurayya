@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Chat Component', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/', { timeout: 60000 });
+    await page.goto('/');
   });
 
   test('chat toggle button is visible', async ({ page }) => {

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('How We Work Section', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/', { timeout: 60000 });
+    await page.goto('/');
     await page.waitForLoadState('networkidle');
   });
 

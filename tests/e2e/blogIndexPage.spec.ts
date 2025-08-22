@@ -22,7 +22,8 @@ test.describe('Blog Index Page', () => {
   });
 
   test('filters blog posts based on search input', async ({ page }) => {
-            await page.getByPlaceholder('Search articles by title or description...').fill('agile');
+    await page.waitForSelector('.post-item');
+    await page.getByPlaceholder('Search articles by title or description...').fill('agile');
     await expect(page.locator('.post-item[data-title*="the future of web development"]')).toBeHidden();
     await expect(page.locator('.post-item[data-title*="a modern guide to agile development"]')).toBeVisible();
   });

@@ -7,6 +7,7 @@ This document provides guidelines for agentic coding agents working in this repo
 - **Build:** `pnpm build`
 - **Development:** `pnpm dev`
 - **Preview:** `pnpm preview`
+- **E2E Tests:** `sudo podman run --rm -it   --ipc=host   -v "$(pwd)":/work   -w /work   mcr.microsoft.com/playwright:v1.54.0-noble   bash -c "npm install -g pnpm && pnpm test:e2e"`
 
 _Note: There are no specified linting or testing commands. Please maintain existing code style and quality._
 

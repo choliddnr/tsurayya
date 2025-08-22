@@ -6,7 +6,7 @@ test.describe('Industries Page', () => {
   });
 
   test('displays page title', async ({ page }) => {
-    await expect(page).toHaveTitle(/Industries We Serve/);
+    await expect(page).toHaveTitle("Industries We Serve");
   });
 
   test('displays PageHero title', async ({ page }) => {

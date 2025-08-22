@@ -64,9 +64,6 @@
   - heading "Technologies We Master" [level=2]
   - paragraph: We work with the most advanced and in-demand technologies across industries
   - region:
-    - group "1 of 15":
-      - text: 
-      - heading "Node.js" [level=3]
     - group "2 of 15":
       - text: 
       - heading "Python" [level=3]
