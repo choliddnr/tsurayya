@@ -24,4 +24,4 @@ pnpm-debug.log*
 .idea/
 
 # pnpm store
-.pnpm-store/
+.pnpm-store
