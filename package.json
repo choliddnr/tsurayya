@@ -13,8 +13,8 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.12",
-    "@astrojs/sitemap": "^3.4.2",
+    "@astrojs/rss": "^4.0.13",
+    "@astrojs/sitemap": "^3.6.0",
     "@iconify-json/fa6-brands": "^1.2.5",
     "@iconify-json/heroicons": "^1.2.2",
     "@iconify-json/mdi": "^1.2.3",
@@ -22,7 +22,7 @@
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.12.8",
+    "astro": "^5.15.3",
     "astro-icon": "^1.1.5",
     "tailwindcss": "^4.1.11"
   },

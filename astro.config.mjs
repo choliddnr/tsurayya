@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import icon from 'astro-icon';
 import * as fa6Brands from '@iconify-json/fa6-brands';
 import sitemap from '@astrojs/sitemap';
@@ -20,4 +20,9 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+   env: {
+    schema: {
+      API_BASE_URL: envField.string({ context: "client", access: "public", default: "/api" }),
+    }
+  }
 });

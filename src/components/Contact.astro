@@ -1,5 +1,7 @@
 ---
-
+const API_BASE_URL = import.meta.env.DEV
+  ? import.meta.env.API_BASE_URL
+  : '/api';
 ---
 
 <section
@@ -27,7 +29,10 @@
             </div>
             <div class="ml-4">
               <h3 class="text-lg font-medium text-white">Email:</h3>
-              <p class="mt-2 text-accent">hello@tsurayya.com</p>
+              <a href="mailto:cholid.dnr@tsurayya.com" target="_blank" class="mt-2 text-accent inline-flex items-center">
+                cholid.dnr@tsurayya.com
+                <i class="fas fa-external-link-alt ml-2 text-xs text-white/80"></i>
+              </a>
             </div>
           </div>
           <div class="mt-6 flex items-start">
@@ -40,7 +45,26 @@
             </div>
             <div class="ml-4">
               <h3 class="text-lg font-medium text-white">Website:</h3>
-              <p class="mt-2 text-accent">www.tsurayya.com</p>
+              <a href="https://www.tsurayya.com" target="_blank" class="mt-2 text-accent inline-flex items-center">
+                www.tsurayya.com
+                <i class="fas fa-external-link-alt ml-2 text-xs text-white/80"></i>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 flex items-start">
+            <div class="flex-shrink-0">
+              <div
+                class="flex items-center justify-center h-12 w-12 rounded-md bg-primary/10 text-primary"
+              >
+                <i class="fab fa-whatsapp text-primary"></i>
+              </div>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-lg font-medium text-white">Whatsapp:</h3>
+              <a href="https://wa.me/6285753521288" target="_blank" class="mt-2 text-accent inline-flex items-center">
+                +62 857 5352 1288
+                <i class="fas fa-external-link-alt ml-2 text-xs text-white/80"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -50,37 +74,24 @@
           class="bg-dark/50 backdrop-blur-sm rounded-xl shadow-xl overflow-hidden border border-white/10"
         >
           <div class="px-6 py-8 sm:p-10">
-            <form id="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
+            <form
+              id="contact-form"
+              action={API_BASE_URL + '/index.php'}
+              method="POST"
+            >
               <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
-                <div>
+                <div class="sm:col-span-2">
                   <label
-                    for="first-name"
+                    for="fullname"
                     class="block text-sm font-medium text-white/80"
-                    >First name</label
+                    >Full name <span class="text-red-500">*</span></label
                   >
                   <div class="mt-1">
                     <input
                       type="text"
-                      name="first-name"
-                      id="first-name"
-                      autocomplete="given-name"
-                      required
-                      class="py-3 px-4 block w-full bg-dark/50 border border-white/10 rounded-md text-white focus:ring-accent focus:border-accent"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label
-                    for="last-name"
-                    class="block text-sm font-medium text-white/80"
-                    >Last name</label
-                  >
-                  <div class="mt-1">
-                    <input
-                      type="text"
-                      name="last-name"
-                      id="last-name"
-                      autocomplete="family-name"
+                      name="fullname"
+                      id="fullname"
+                      autocomplete="fullname"
                       required
                       class="py-3 px-4 block w-full bg-dark/50 border border-white/10 rounded-md text-white focus:ring-accent focus:border-accent"
                     />
@@ -88,8 +99,24 @@
                 </div>
                 <div class="sm:col-span-2">
                   <label
+                    for="nickname"
+                    class="block text-sm font-medium text-white/80"
+                    >Nickname</label
+                  >
+                  <div class="mt-1">
+                    <input
+                      type="text"
+                      name="nickname"
+                      id="nickname"
+                      autocomplete="nickname"
+                      class="py-3 px-4 block w-full bg-dark/50 border border-white/10 rounded-md text-white focus:ring-accent focus:border-accent"
+                    />
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <label
                     for="email"
-                    class="block text-sm font-medium text-white/80">Email</label
+                    class="block text-sm font-medium text-white/80">Email <span class="text-red-500">*</span></label
                   >
                   <div class="mt-1">
                     <input
@@ -104,16 +131,17 @@
                 </div>
                 <div class="sm:col-span-2">
                   <label
-                    for="phone"
+                    for="whatsapp"
                     class="block text-sm font-medium text-white/80"
-                    >Phone number</label
+                    >Whatsapp <span class="text-red-500">*</span></label
                   >
                   <div class="mt-1">
                     <input
                       type="text"
-                      name="phone"
-                      id="phone"
+                      name="whatsapp"
+                      id="whatsapp"
                       autocomplete="tel"
+                      required
                       class="py-3 px-4 block w-full bg-dark/50 border border-white/10 rounded-md text-white focus:ring-accent focus:border-accent"
                     />
                   </div>
@@ -122,7 +150,7 @@
                   <label
                     for="message"
                     class="block text-sm font-medium text-white/80"
-                    >Message</label
+                    >Message <span class="text-red-500">*</span></label
                   >
                   <div class="mt-1">
                     <textarea
@@ -137,10 +165,31 @@
               </div>
               <div class="mt-8 flex">
                 <button
+                  id="submit-button"
                   type="submit"
                   class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-dark bg-accent hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-all cyber-button"
                 >
-                  Send Message
+                  <span id="button-text">Send Message</span>
+                  <svg
+                    id="loading-spinner"
+                    class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      class="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="4"></circle>
+                    <path
+                      class="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </form>
@@ -153,35 +202,65 @@
 </section>
 
 <script>
-  const form = document.getElementById('contact-form');
-  const statusDiv = document.getElementById('form-status');
+  type FormError = { message: string };
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const statusDiv = document.getElementById('form-status') as HTMLDivElement;
+  const submitButton = document.getElementById(
+    'submit-button',
+  ) as HTMLButtonElement;
+  const buttonText = document.getElementById('button-text') as HTMLSpanElement;
+  const loadingSpinner = document.getElementById(
+    'loading-spinner',
+  ) as HTMLElement;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
-    
+
+    // Start loading state
+    submitButton.disabled = true;
+    buttonText.textContent = 'Sending...';
+    loadingSpinner.classList.remove('hidden');
+
     try {
       const response = await fetch(form.action, {
         method: 'POST',
         body: data,
         headers: {
-          'Accept': 'application/json'
-        }
+          Accept: 'application/json',
+        },
       });
+      console.log(response);
 
       if (response.ok) {
-        statusDiv.innerHTML = '<p class="text-green-500">Thanks for your message! We will get back to you soon.</p>';
+        statusDiv.innerHTML =
+          '<p class="text-green-500">Thanks for your message! We will get back to you soon.</p>';
         form.reset();
       } else {
         const responseData = await response.json();
         if (Object.hasOwn(responseData, 'errors')) {
-            statusDiv.innerHTML = `<p class="text-red-500">${responseData["errors"].map(error => error["message"]).join(", ")}</p>`;
+          statusDiv.innerHTML = `<p class="text-red-500">${(
+            responseData.errors as FormError[]
+          )
+            .map((error) => error.message)
+            .join(', ')}</p>`;
         } else {
-            statusDiv.innerHTML = '<p class="text-red-500">Oops! There was a problem submitting your form.</p>';
+          statusDiv.innerHTML =
+            '<p class="text-red-500">Oops! There was a problem submitting your form.</p>';
         }
       }
-    } catch (error) {
-      statusDiv.innerHTML = '<p class="text-red-500">Oops! There was a problem submitting your form.</p>';
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        statusDiv.innerHTML = `<p class="text-red-500">Error: ${error.message}</p>`;
+      } else {
+        statusDiv.innerHTML =
+          '<p class="text-red-500">Oops! There was a problem submitting your form.</p>';
+      }
+    } finally {
+      // End loading state
+      submitButton.disabled = false;
+      buttonText.textContent = 'Send Message';
+      loadingSpinner.classList.add('hidden');
     }
   });
 </script>
