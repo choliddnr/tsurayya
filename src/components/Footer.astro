@@ -1,3 +1,9 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
 <!-- Footer -->
 <footer class="bg-dark border-t border-white/5">
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -9,7 +15,7 @@
           >
         </div>
         <p class="text-white/70 text-base">
-          Transforming businesses through innovative digital solutions.
+          {t('footer.tagline')}
         </p>
         <div class="flex space-x-6">
           <a href="#" class="text-white/70 hover:text-accent">
@@ -32,32 +38,32 @@
             <h3
               class="text-sm font-semibold text-white tracking-wider uppercase"
             >
-              Solutions
+              {t('footer.solutions')}
             </h3>
             <div class="mt-4 space-y-4">
               <a
                 href="/services"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                Web Development
+                {t('footer.solutions.web')}
               </a>
               <a
                 href="/services"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                AI Integration
+                {t('footer.solutions.ai')}
               </a>
               <a
                 href="/services"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                Cloud Services
+                {t('footer.solutions.cloud')}
               </a>
               <a
                 href="/services"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                Data Analytics
+                {t('footer.solutions.analytics')}
               </a>
             </div>
           </div>
@@ -65,32 +71,32 @@
             <h3
               class="text-sm font-semibold text-white tracking-wider uppercase"
             >
-              Company
+              {t('footer.company')}
             </h3>
             <div class="mt-4 space-y-4">
               <a
                 href="/about"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                About
+                {t('footer.company.about')}
               </a>
               <a
                 href="/careers"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                Careers
+                {t('footer.company.careers')}
               </a>
               <a
                 href="/blog"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                Blog
+                {t('footer.company.blog')}
               </a>
               <a
                 href="/contact"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                Contact
+                {t('footer.company.contact')}
               </a>
             </div>
           </div>
@@ -100,32 +106,32 @@
             <h3
               class="text-sm font-semibold text-white tracking-wider uppercase"
             >
-              Support
+              {t('footer.support')}
             </h3>
             <div class="mt-4 space-y-4">
               <a
                 href="/support/documentation"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                Documentation
+                {t('footer.support.docs')}
               </a>
               <a
                 href="/support/guides"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                Guides
+                {t('footer.support.guides')}
               </a>
               <a
                 href="/support/api-status"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                API Status
+                {t('footer.support.status')}
               </a>
               <a
                 href="/contact"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                Live Chat
+                {t('footer.support.chat')}
               </a>
             </div>
           </div>
@@ -133,32 +139,32 @@
             <h3
               class="text-sm font-semibold text-white tracking-wider uppercase"
             >
-              Legal
+              {t('footer.legal')}
             </h3>
             <div class="mt-4 space-y-4">
               <a
                 href="/legal/privacy"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                Privacy
+                {t('footer.legal.privacy')}
               </a>
               <a
                 href="/legal/terms"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                Terms
+                {t('footer.legal.terms')}
               </a>
               <a
                 href="/legal/cookie-policy"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                Cookie Policy
+                {t('footer.legal.cookies')}
               </a>
               <a
                 href="/legal/licenses"
                 class="text-base text-white/70 hover:text-accent block"
               >
-                Licenses
+                {t('footer.legal.licenses')}
               </a>
             </div>
           </div>
@@ -166,8 +172,7 @@
       </div>
     </div>
     <div class="mt-12 border-t border-white/5 pt-8">
-      <p class="text-base text-white/70 text-center">
-        &copy; 2025 Tsurayya Engineering. All rights reserved.
+      <p class="text-base text-white/70 text-center" set:html={t('footer.copyright')}>
       </p>
     </div>
   </div>

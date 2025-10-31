@@ -1,15 +1,21 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div
   id="chatbox"
   class="fixed bottom-8 right-8 w-80 bg-dark/90 backdrop-blur-md rounded-xl shadow-xl border border-accent/30 transform transition-all duration-300 ease-in-out translate-y-4 opacity-0 hidden"
+  data-you={t('chat.you')}
+  data-ai-assistant={t('chat.aiAssistant')}
+  data-ai-response={t('chat.aiResponse')}
 >
   <div
     class="flex items-center justify-between px-4 py-3 bg-primary/10 border-b border-accent/20 rounded-t-xl"
   >
-    <h3 class="text-white font-medium">Chat with us</h3>
+    <h3 class="text-white font-medium">{t('chat.title')}</h3>
     <button id="close-chat" class="text-white/70 hover:text-white">
       <i class="fas fa-times"></i>
     </button>
@@ -17,8 +23,8 @@
   <div id="chat-messages" class="h-64 p-4 overflow-y-auto">
     <div class="chat-message mb-4">
       <div class="bg-primary/10 text-white rounded-lg p-3 max-w-xs">
-        <p>Hello! How can I help you today?</p>
-        <p class="text-xs text-white/50 mt-1">AI Assistant</p>
+        <p>{t('chat.greeting')}</p>
+        <p class="text-xs text-white/50 mt-1">{t('chat.aiAssistant')}</p>
       </div>
     </div>
   </div>
@@ -27,7 +33,7 @@
       <input
         type="text"
         id="chat-input"
-        placeholder="Type your message..."
+        placeholder={t('chat.placeholder')}
         class="flex-1 bg-dark/50 border border-white/10 rounded-l-lg px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-accent"
       />
       <button

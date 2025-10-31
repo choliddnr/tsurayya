@@ -1,5 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section
@@ -30,33 +33,32 @@
               <i class="fas fa-code text-primary"></i>
             </div>
             <h3 class="text-xl font-bold text-white">
-              Custom Website & Web App Development
+              {t('services.web.title')}
             </h3>
           </div>
           <p class="text-white/70 mb-6">
-            From landing pages to complex web platforms, we design and develop
-            tailored digital experiences that drive growth and engagement.
+            {t('services.web.description')}
           </p>
           <ul class="space-y-3 text-white/80">
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>Fully responsive design</span>
+              <span>{t('services.web.item1')}</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>Backend/API development</span>
+              <span>{t('services.web.item2')}</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>Admin dashboards</span>
+              <span>{t('services.web.item3')}</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>eCommerce platforms</span>
+              <span>{t('services.web.item4')}</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>Progressive Web Apps (PWA)</span>
+              <span>{t('services.web.item5')}</span>
             </li>
           </ul>
         </div>
@@ -83,29 +85,28 @@
               <i class="fas fa-brain text-primary"></i>
             </div>
             <h3 class="text-xl font-bold text-white">
-              AI Integration & Automation
+              {t('services.ai.title')}
             </h3>
           </div>
           <p class="text-white/70 mb-6">
-            Put AI to work for you. We build AI-powered tools to boost your
-            productivity by up to 40% and unlock new data-driven insights.
+            {t('services.ai.description')}
           </p>
           <ul class="space-y-3 text-white/80">
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>AI Chatbots (support, sales, onboarding)</span>
+              <span>{t('services.ai.item1')}</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>Workflow automation (e.g., using n8n or Zapier)</span>
+              <span>{t('services.ai.item2')}</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>Custom AI agents for business intelligence</span>
+              <span>{t('services.ai.item3')}</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>Integration with GPT, Claude, and open-source models</span>
+              <span>{t('services.ai.item4')}</span>
             </li>
           </ul>
         </div>
@@ -132,32 +133,32 @@
               <i class="fas fa-cloud text-primary"></i>
             </div>
             <h3 class="text-xl font-bold text-white">
-              Infrastructure Management
+              {t('services.infra.title')}
             </h3>
           </div>
           <p class="text-white/70 mb-6">
-            We manage the tech foundation so your business runs smoothly, securely, and efficiently, with 99.9% uptime.
+            {t('services.infra.description')}
           </p>
           <ul class="space-y-3 text-white/80">
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>Server setup & monitoring</span>
+              <span>{t('services.infra.item1')}</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>Cloud & container deployment (Docker, Kubernetes)</span>
+              <span>{t('services.infra.item2')}</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>Self-hosted or hybrid solutions</span>
+              <span>{t('services.infra.item3')}</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>Database and storage optimization</span>
+              <span>{t('services.infra.item4')}</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-accent mt-1 mr-3"></i>
-              <span>Performance tuning & security hardening</span>
+              <span>{t('services.infra.item5')}</span>
             </li>
           </ul>
         </div>

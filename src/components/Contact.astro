@@ -1,4 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const API_BASE_URL = import.meta.env.DEV
   ? import.meta.env.API_BASE_URL
   : '/api';
@@ -11,12 +16,10 @@ const API_BASE_URL = import.meta.env.DEV
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:grid lg:grid-cols-12 lg:gap-8">
       <div class="lg:col-span-5">
-        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-          Get in <span class="gradient-text">Touch</span>
+        <h2 class="text-3xl font-extrabold text-white sm:text-4xl" set:html={t('contact.title')}>
         </h2>
         <p class="mt-4 text-lg text-white/80">
-          Whether you're planning your next big project or need help improving
-          an existing system, we’re here to help.
+          {t('contact.subtitle')}
         </p>
         <div class="mt-8">
           <div class="flex items-start">
@@ -28,7 +31,7 @@ const API_BASE_URL = import.meta.env.DEV
               </div>
             </div>
             <div class="ml-4">
-              <h3 class="text-lg font-medium text-white">Email:</h3>
+              <h3 class="text-lg font-medium text-white">{t('contact.email')}</h3>
               <a href="mailto:cholid.dnr@tsurayya.com" target="_blank" class="mt-2 text-accent inline-flex items-center">
                 cholid.dnr@tsurayya.com
                 <i class="fas fa-external-link-alt ml-2 text-xs text-white/80"></i>
@@ -44,7 +47,7 @@ const API_BASE_URL = import.meta.env.DEV
               </div>
             </div>
             <div class="ml-4">
-              <h3 class="text-lg font-medium text-white">Website:</h3>
+              <h3 class="text-lg font-medium text-white">{t('contact.website')}</h3>
               <a href="https://www.tsurayya.com" target="_blank" class="mt-2 text-accent inline-flex items-center">
                 www.tsurayya.com
                 <i class="fas fa-external-link-alt ml-2 text-xs text-white/80"></i>
@@ -60,7 +63,7 @@ const API_BASE_URL = import.meta.env.DEV
               </div>
             </div>
             <div class="ml-4">
-              <h3 class="text-lg font-medium text-white">Whatsapp:</h3>
+              <h3 class="text-lg font-medium text-white">{t('contact.whatsapp')}</h3>
               <a href="https://wa.me/6285753521288" target="_blank" class="mt-2 text-accent inline-flex items-center">
                 +62 857 5352 1288
                 <i class="fas fa-external-link-alt ml-2 text-xs text-white/80"></i>
@@ -78,13 +81,18 @@ const API_BASE_URL = import.meta.env.DEV
               id="contact-form"
               action={API_BASE_URL + '/index.php'}
               method="POST"
+              data-sending={t('contact.form.sending')}
+              data-send={t('contact.form.send')}
+              data-success={t('contact.form.success')}
+              data-error={t('contact.form.error')}
+              data-error-generic={t('contact.form.error.generic')}
             >
               <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
                 <div class="sm:col-span-2">
                   <label
                     for="fullname"
                     class="block text-sm font-medium text-white/80"
-                    >Full name <span class="text-red-500">*</span></label
+                    >{t('contact.form.fullname')} <span class="text-red-500">*</span></label
                   >
                   <div class="mt-1">
                     <input
@@ -101,7 +109,7 @@ const API_BASE_URL = import.meta.env.DEV
                   <label
                     for="nickname"
                     class="block text-sm font-medium text-white/80"
-                    >Nickname</label
+                    >{t('contact.form.nickname')}</label
                   >
                   <div class="mt-1">
                     <input
@@ -116,7 +124,7 @@ const API_BASE_URL = import.meta.env.DEV
                 <div class="sm:col-span-2">
                   <label
                     for="email"
-                    class="block text-sm font-medium text-white/80">Email <span class="text-red-500">*</span></label
+                    class="block text-sm font-medium text-white/80">{t('contact.form.email')} <span class="text-red-500">*</span></label
                   >
                   <div class="mt-1">
                     <input
@@ -133,7 +141,7 @@ const API_BASE_URL = import.meta.env.DEV
                   <label
                     for="whatsapp"
                     class="block text-sm font-medium text-white/80"
-                    >Whatsapp <span class="text-red-500">*</span></label
+                    >{t('contact.form.whatsapp')} <span class="text-red-500">*</span></label
                   >
                   <div class="mt-1">
                     <input
@@ -150,7 +158,7 @@ const API_BASE_URL = import.meta.env.DEV
                   <label
                     for="message"
                     class="block text-sm font-medium text-white/80"
-                    >Message <span class="text-red-500">*</span></label
+                    >{t('contact.form.message')} <span class="text-red-500">*</span></label
                   >
                   <div class="mt-1">
                     <textarea
@@ -169,7 +177,7 @@ const API_BASE_URL = import.meta.env.DEV
                   type="submit"
                   class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-dark bg-accent hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-all cyber-button"
                 >
-                  <span id="button-text">Send Message</span>
+                  <span id="button-text">{t('contact.form.send')}</span>
                   <svg
                     id="loading-spinner"
                     class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden"
@@ -213,13 +221,19 @@ const API_BASE_URL = import.meta.env.DEV
     'loading-spinner',
   ) as HTMLElement;
 
+  const sendingString = form.dataset.sending;
+  const sendString = form.dataset.send;
+  const successString = form.dataset.success;
+  const errorString = form.dataset.error;
+  const errorGenericString = form.dataset.errorGeneric;
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
 
     // Start loading state
     submitButton.disabled = true;
-    buttonText.textContent = 'Sending...';
+    buttonText.textContent = sendingString;
     loadingSpinner.classList.remove('hidden');
 
     try {
@@ -234,32 +248,30 @@ const API_BASE_URL = import.meta.env.DEV
 
       if (response.ok) {
         statusDiv.innerHTML =
-          '<p class="text-green-500">Thanks for your message! We will get back to you soon.</p>';
+          `<p class="text-green-500">${successString}</p>`;
         form.reset();
       } else {
         const responseData = await response.json();
         if (Object.hasOwn(responseData, 'errors')) {
-          statusDiv.innerHTML = `<p class="text-red-500">${(
-            responseData.errors as FormError[]
-          )
+          statusDiv.innerHTML = `<p class="text-red-500">${(responseData.errors as FormError[])
             .map((error) => error.message)
             .join(', ')}</p>`;
         } else {
           statusDiv.innerHTML =
-            '<p class="text-red-500">Oops! There was a problem submitting your form.</p>';
+            `<p class="text-red-500">${errorString}</p>`;
         }
       }
     } catch (error: unknown) {
       if (error instanceof Error) {
-        statusDiv.innerHTML = `<p class="text-red-500">Error: ${error.message}</p>`;
+        statusDiv.innerHTML = `<p class="text-red-500">${errorGenericString}${error.message}</p>`;
       } else {
         statusDiv.innerHTML =
-          '<p class="text-red-500">Oops! There was a problem submitting your form.</p>';
+          `<p class="text-red-500">${errorString}</p>`;
       }
     } finally {
       // End loading state
       submitButton.disabled = false;
-      buttonText.textContent = 'Send Message';
+      buttonText.textContent = sendString;
       loadingSpinner.classList.add('hidden');
     }
   });

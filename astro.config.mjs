@@ -20,9 +20,17 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-   env: {
+  i18n: {
+    locales: ['en', 'id'],
+    defaultLocale: 'en',
+  },
+  env: {
     schema: {
-      API_BASE_URL: envField.string({ context: "client", access: "public", default: "/api" }),
-    }
-  }
+      API_BASE_URL: envField.string({
+        context: 'client',
+        access: 'public',
+        default: '/api',
+      }),
+    },
+  },
 });

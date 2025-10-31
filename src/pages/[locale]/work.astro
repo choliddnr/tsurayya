@@ -1,0 +1,133 @@
+---
+import { Icon } from 'astro-icon/components';
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import PageHero from '../../components/PageHero.astro';
+const projects = (await getCollection('projects')).sort(
+  (a, b) => (a.data.order || 999) - (b.data.order || 999)
+);
+---
+
+<Layout
+  title="Our Work | Tsurayya"
+  description="A showcase of our commitment to excellence and innovation. Explore our case studies and see how we have helped our clients succeed."
+>
+  <PageHero
+    title="Our <span class='gradient-text'>Projects</span>"
+    description="A showcase of our commitment to excellence and innovation. Explore our case studies."
+  />
+  <section id="industries" class="pb-20 bg-dark/50 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mt-12 mb-16 max-w-2xl mx-auto">
+        <div class="relative">
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Search projects by title, description, or technology..."
+            class="w-full p-4 pl-14 text-lg text-white bg-dark/50 border-2 border-white/10 rounded-full focus:ring-accent focus:border-accent transition-colors duration-300"
+          />
+          <div
+            class="absolute inset-y-0 left-0 flex items-center pl-5 pointer-events-none"
+          >
+            <Icon
+              name="heroicons:magnifying-glass"
+              class="w-6 h-6 text-white/50"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div id="project-cards" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          projects.map((project) => (
+            <div
+              class="project-card bg-dark/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-white/5 hover:border-accent/30 transition-all duration-300 h-full flex flex-col group"
+              data-title={project.data.title.toLowerCase()}
+              data-description={project.data.description.toLowerCase()}
+              data-tech={project.data.technologies.join(' ').toLowerCase()}
+            >
+              <a
+                href={`/projects/${project.slug}`}
+                class="flex flex-col h-full"
+              >
+                <div class="h-48 relative overflow-hidden">
+                  <img
+                    src={project.data.image}
+                    alt={project.data.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent" />
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                  <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">
+                    {project.data.title}
+                  </h3>
+                  <p class="text-white/70 mb-4 text-base flex-grow">
+                    {project.data.description}
+                  </p>
+                  <div class="mt-auto">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                      {project.data.technologies.map((tech) => (
+                        <span class="px-3 py-1 text-xs rounded-full bg-primary/20 text-primary font-medium">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div class="text-accent hover:text-accent/80 text-sm font-medium inline-flex items-center">
+                      View Case Study
+                      <Icon
+                        name="heroicons:arrow-right"
+                        class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          ))
+        }
+      </div>
+      <div id="no-results" class="text-center py-16" style="display: none;">
+        <h3 class="text-2xl font-bold text-white">No Projects Found</h3>
+        <p class="text-white/70 mt-2">
+          Try adjusting your search terms or view all our services.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const cardsContainer = document.getElementById('project-cards');
+      if (!searchInput || !cardsContainer) return;
+
+      const projectCards = Array.from(
+        cardsContainer.querySelectorAll('.project-card')
+      );
+      const noResultsMessage = document.getElementById('no-results');
+
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        let resultsFound = false;
+
+        projectCards.forEach((card) => {
+          const title = card.dataset.title || '';
+          const description = card.dataset.description || '';
+          const tech = card.dataset.tech || '';
+
+          const isVisible =
+            title.includes(query) ||
+            description.includes(query) ||
+            tech.includes(query);
+          card.style.display = isVisible ? '' : 'none';
+          if (isVisible) resultsFound = true;
+        });
+
+        if (noResultsMessage) {
+          noResultsMessage.style.display = resultsFound ? 'none' : 'block';
+        }
+      });
+    });
+  </script>
+</Layout>

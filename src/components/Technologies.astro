@@ -1,16 +1,17 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="py-20 bg-dark">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center">
-      <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-        Technologies We <span class="gradient-text">Master</span>
+      <h2 class="text-3xl font-extrabold text-white sm:text-4xl" set:html={t('technologies.title')}>
       </h2>
       <p class="mt-4 max-w-2xl text-xl text-white/70 mx-auto">
-        We work with the most advanced and in-demand technologies across
-        industries
+        {t('technologies.subtitle')}
       </p>
     </div>
 

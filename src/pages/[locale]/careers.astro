@@ -1,0 +1,61 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+---
+
+<Layout title="Careers at Tsurayya">
+  <PageHero
+    title="Join Our <span class='gradient-text'>Team</span>"
+    description="We're always looking for talented individuals to join our growing team."
+  />
+
+  <div class="mt-16">
+    <h2 class="text-3xl font-extrabold text-white text-center">
+      Current Openings
+    </h2>
+    <div class="mt-8 max-w-3xl mx-auto">
+      <div
+        class="bg-dark/50 backdrop-blur-sm rounded-xl p-8 border border-white/10 mb-8"
+      >
+        <h3 class="text-2xl font-bold text-white">Senior Frontend Developer</h3>
+        <p class="text-white/70 mt-2">
+          We're looking for a seasoned frontend developer to help us build
+          beautiful and performant user interfaces.
+        </p>
+        <div class="mt-4">
+          <a href="#" class="text-accent hover:underline"
+            >View Details & Apply</a
+          >
+        </div>
+      </div>
+      <div
+        class="bg-dark/50 backdrop-blur-sm rounded-xl p-8 border border-white/10 mb-8"
+      >
+        <h3 class="text-2xl font-bold text-white">Lead Backend Engineer</h3>
+        <p class="text-white/70 mt-2">
+          We're seeking an experienced backend engineer to lead the development
+          of our scalable and reliable APIs.
+        </p>
+        <div class="mt-4">
+          <a href="#" class="text-accent hover:underline"
+            >View Details & Apply</a
+          >
+        </div>
+      </div>
+      <div
+        class="bg-dark/50 backdrop-blur-sm rounded-xl p-8 border border-white/10"
+      >
+        <h3 class="text-2xl font-bold text-white">UX/UI Designer</h3>
+        <p class="text-white/70 mt-2">
+          We're looking for a creative UX/UI designer to craft intuitive and
+          engaging user experiences.
+        </p>
+        <div class="mt-4">
+          <a href="#" class="text-accent hover:underline"
+            >View Details & Apply</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,6 +1,10 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import NavDropdown from './NavDropdown.astro';
 import NavDropdownMobile from './NavDropdownMobile.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const solutionDescription = {
   primary:
@@ -96,7 +100,7 @@ const industriesContent = [
 
 <header
   id="main-header"
-  class="bg-dark sticky top-0 z-50 transition-shadow transition-transform duration-500 ease-in-out"
+  class="bg-dark sticky top-0 z-50 transition-transform duration-500 ease-in-out"
 >
   <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
     <div class="text-2xl font-bold">
@@ -110,33 +114,33 @@ const industriesContent = [
     </div>
     <div class="hidden md:flex space-x-4 items-center">
       <NavDropdown
-        title="Solutions"
+        title={t('nav.solutions')}
         content={solutionsContent}
         description={solutionDescription}
       />
       <NavDropdown
-        title="Technologies"
+        title={t('nav.technologies')}
         content={technologiesContent}
         description={technologiesDescription}
       />
       <NavDropdown
-        title="Industries"
+        title={t('nav.industries')}
         content={industriesContent}
         description={industriesDescription}
       />
       <a href="/about" class="text-white hover:text-[var(--color-accent)]"
-        >About</a
+        >{t('nav.about')}</a
       >
       <a href="/work" class="text-white hover:text-[var(--color-accent)]"
-        >Our Work</a
+        >{t('nav.work')}</a
       >
       <a href="/blog" class="text-white hover:text-[var(--color-accent)]"
-        >Blog</a
+        >{t('nav.blog')}</a
       >
       <a
         href="/contact"
         class="bg-[var(--color-accent)] text-dark px-4 py-2 rounded-full hover:opacity-90 cyber-button"
-        >Schedule a Call</a
+        >{t('nav.contact')}</a
       >
     </div>
     <div class="md:hidden flex items-center">
@@ -159,39 +163,39 @@ const industriesContent = [
   <div id="mobile-menu" class="md:hidden" style="display: none;">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
       <NavDropdownMobile
-        title="Solutions"
+        title={t('nav.solutions')}
         content={solutionsContent}
         description={solutionDescription}
       />
       <NavDropdownMobile
-        title="Technologies"
+        title={t('nav.technologies')}
         content={technologiesContent}
         description={technologiesDescription}
       />
       <NavDropdownMobile
-        title="Industries"
+        title={t('nav.industries')}
         content={industriesContent}
         description={industriesDescription}
       />
       <a
         href="/about"
         class="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[var(--color-accent)]"
-        >About</a
+        >{t('nav.about')}</a
       >
       <a
         href="/work"
         class="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[var(--color-accent)]"
-        >Our Work</a
+        >{t('nav.work')}</a
       >
       <a
         href="/blog"
         class="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[var(--color-accent)]"
-        >Blog</a
+        >{t('nav.blog')}</a
       >
       <a
         href="/contact"
         class="bg-[var(--color-accent)] text-dark block px-3 py-2 rounded-full text-center text-base font-medium hover:opacity-90 cyber-button"
-        >Schedule a Call</a
+        >{t('nav.contact')}</a
       >
     </div>
   </div>

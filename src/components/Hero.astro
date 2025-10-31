@@ -1,5 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section
@@ -23,14 +26,13 @@
         <h1
           class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl"
         >
-          <span class="block">Build, Scale, and Innovate</span>
-          <span class="block gradient-text cyber-glow">With a Trusted Partner</span>
+          <span class="block">{t('hero.title1')}</span>
+          <span class="block gradient-text cyber-glow">{t('hero.title2')}</span>
         </h1>
         <p
           class="mt-5 text-lg text-white/80 sm:text-xl sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
         >
-          We build cutting-edge digital solutions with AI integration, scalable
-          infrastructure, and exceptional user experiences.
+          {t('hero.subtitle')}
         </p>
         <div
           class="mt-10 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0"
@@ -43,7 +45,7 @@
                 href="#contact"
                 class="w-full flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-dark bg-accent hover:bg-accent/90 md:text-lg md:px-10 transition-all cyber-button"
               >
-                Let's Build Something Amazing
+                {t('hero.cta1')}
               </a>
             </div>
             <div class="mt-3 sm:mt-0 sm:ml-3">
@@ -51,7 +53,7 @@
                 href="#services"
                 class="w-full flex items-center justify-center px-8 py-4 border border-primary text-base font-medium rounded-full text-primary bg-transparent hover:bg-primary/10 md:text-lg md:px-10 transition-all cyber-button"
               >
-                Explore Our AI Solutions
+                {t('hero.cta2')}
               </a>
             </div>
           </div>
@@ -82,15 +84,14 @@
                     </div>
                   </div>
                   <h3 class="text-white text-xl font-semibold mb-2">
-                    AI Assistant
+                    {t('hero.ai.title')}
                   </h3>
-                  <p class="text-white/80 mb-4">How can I help you today?</p>
+                  <p class="text-white/80 mb-4">{t('hero.ai.subtitle')}</p>
                   <div
                     class="bg-white/5 rounded-lg p-3 text-left text-sm text-white/90 border border-white/10"
                   >
                     <p>
-                      Hello! I'm your AI assistant. Ask me about our services or
-                      request a consultation.
+                      {t('hero.ai.greeting')}
                     </p>
                   </div>
                 </div>

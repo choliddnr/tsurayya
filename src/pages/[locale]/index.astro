@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import Services from '../../components/Services.astro';
+import Technologies from '../../components/Technologies.astro';
+import About from '../../components/About.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import HowWeWork from '../../components/HowWeWork.astro';
+import Work from '../../components/Work.astro';
+import Blog from '../../components/Blog.astro';
+// import Testimonials from '../../components/Testimonials.astro';
+import Contact from '../../components/Contact.astro';
+import Chat from '../../components/Chat.astro';
+import Scripts from '../../components/Scripts.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return [{ params: { locale: 'en' } }, { params: { locale: 'id' } }];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// const phrases = [
+//   'Accelerate Your Roadmap with Vetted Tech Talent',
+//   'Build Scalable Software Solutions',
+//   'Innovate with AI and Data Science',
+//   'Design Intuitive User Experiences',
+// ];
+
+// const testimonials = [
+//   {
+//     quote:
+//       'Tsurayya has been an invaluable partner in accelerating our development roadmap. Their talent is top-notch and their process is seamless.',
+//     author: 'John Doe',
+//     title: 'CTO at ExampleCorp',
+//   },
+//   {
+//     quote:
+//       'The team at Tsurayya delivered beyond our expectations. Their expertise in AI and data science helped us unlock new opportunities.',
+//     author: 'Jane Smith',
+//     title: 'CEO at InnovateNow',
+//   },
+//   {
+//     quote:
+//       'We highly recommend Tsurayya for their exceptional mobile app development. They transformed our vision into a stunning reality.',
+//     author: 'Peter Jones',
+//     title: 'Founder of MobileSolutions',
+//   },
+// ];
+---
+
+<Layout
+  title="Tsurayya Engineering - Nearshore Software Development & Staff Augmentation"
+  description="Build, scale, and innovate with a trusted technology partner. We provide cutting-edge digital solutions, AI integration, and scalable infrastructure to drive your business forward."
+>
+  <Hero />
+  <Services />
+  <Technologies />
+  <About />
+  <WhyChooseUs />
+  <HowWeWork />
+  <Work limit={3} />
+  <Blog limit={3} />
+  <!-- <Testimonial /> -->
+  <Contact />
+  <Chat />
+  <Scripts />
+</Layout>
