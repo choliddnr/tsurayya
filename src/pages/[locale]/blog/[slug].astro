@@ -2,14 +2,25 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
 import PageHero from '../../../components/PageHero.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: {
+      locale: post.data.lang,
+      slug: post.slug.split('/').slice(1).join('/'),
+    },
     props: { post },
   }));
 }
+
+// export function getStaticPaths() {
+//   return [{ params: { locale: 'en' } }, { params: { locale: 'id' } }];
+// }
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const { post } = Astro.props;
 const { Content } = await post.render();

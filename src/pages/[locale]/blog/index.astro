@@ -3,22 +3,27 @@ import { Icon } from 'astro-icon/components';
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import PageHero from '../../../components/PageHero.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+export function getStaticPaths() {
+  return [{ params: { locale: 'en' } }, { params: { locale: 'id' } }];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const posts = (
+  await getCollection('blog', ({ data }) => data.lang === lang)
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const featuredPost = posts.find((post) => post.data.featured);
 const regularPosts = posts.filter((post) => !post.data.featured);
 ---
 
-<Layout
-  title="Blog | Tsurayya"
-  description="Insights, tutorials, and updates from our team of experts. Explore our latest articles on web development, AI, and more."
->
+<Layout title={t('page.blog.title')} description={t('page.blog.description')}>
   <PageHero
-    title="Our <span class='gradient-text'>Blog</span>"
-    description="Insights, tutorials, and updates from our team of experts. Explore our latest articles."
+    title={t('page.blog.hero.title')}
+    description={t('page.blog.hero.description')}
   />
   <section id="industries" class="pb-20 bg-dark/50 backdrop-blur-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,7 +32,7 @@ const regularPosts = posts.filter((post) => !post.data.featured);
           <input
             type="search"
             id="search-input"
-            placeholder="Search articles by title or description..."
+            placeholder={t('page.blog.content.search.placeholder')}
             class="w-full p-4 pl-14 text-lg text-white bg-dark/50 border-2 border-white/10 rounded-full focus:ring-accent focus:border-accent transition-colors duration-300"
           />
           <div
@@ -44,11 +49,17 @@ const regularPosts = posts.filter((post) => !post.data.featured);
       {
         featuredPost && (
           <div class="mb-16">
-            <h2 class="text-3xl font-extrabold text-white sm:text-4xl mb-8 text-center">
-              Featured <span class="gradient-text">Post</span>
-            </h2>
+            {/* <pre
+              class="text-3xl font-extrabold text-white sm:text-4xl mb-8 text-center"
+              set:html={featuredPost.slug}
+            /> */}
+
+            <h2
+              class="text-3xl font-extrabold text-white sm:text-4xl mb-8 text-center"
+              set:html={t('page.blog.content.featuredPost.title')}
+            />
             <a
-              href={`/blog/${featuredPost.slug}`}
+              href={`/${lang}/blog/${featuredPost.slug}`}
               class="block bg-dark/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-white/10 hover:border-accent/30 transition-all duration-300"
             >
               <div class="md:flex">
@@ -78,7 +89,7 @@ const regularPosts = posts.filter((post) => !post.data.featured);
                     <span>{featuredPost.data.author}</span>
                   </div>
                   <div class="text-accent hover:text-accent/80 text-sm font-medium inline-flex items-center">
-                    Read more
+                    {t('page.blog.content.readMore')}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-4 w-4 ml-2"
@@ -137,7 +148,7 @@ const regularPosts = posts.filter((post) => !post.data.featured);
                     {post.data.description}
                   </p>
                   <div class="mt-auto text-accent hover:text-accent/80 text-sm font-medium inline-flex items-center">
-                    Read more
+                    {t('page.blog.content.readMore')}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-4 w-4 ml-2"
@@ -160,8 +171,12 @@ const regularPosts = posts.filter((post) => !post.data.featured);
         }
       </div>
       <div id="no-results" class="text-center py-16" style="display: none;">
-        <h3 class="text-2xl font-bold text-white">No Results Found</h3>
-        <p class="text-white/70 mt-2">Try adjusting your search terms.</p>
+        <h3 class="text-2xl font-bold text-white">
+          {t('page.blog.content.noResults.title')}
+        </h3>
+        <p class="text-white/70 mt-2">
+          {t('page.blog.content.noResults.description')}
+        </p>
       </div>
     </div>
   </section>

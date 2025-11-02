@@ -1,12 +1,20 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return [{ params: { locale: 'en' } }, { params: { locale: 'id' } }];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Industries We Serve">
+<Layout title={t('page.industries.title')} description={t('page.industries.description')}>
   <PageHero
-    title="Industries We <span class='gradient-text'>Serve</span>"
-    description="We have experience working with a wide range of industries."
+    title={t('page.industries.hero.title')}
+    description={t('page.industries.hero.description')}
   />
   <section id="industries" class="pb-20 bg-dark/50 backdrop-blur-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,55 +22,61 @@ import PageHero from '../../components/PageHero.astro';
         <div
           class="bg-dark/50 backdrop-blur-sm rounded-xl p-8 border border-white/10"
         >
-          <h3 class="text-2xl font-bold text-white">Healthcare</h3>
+          <h3 class="text-2xl font-bold text-white">
+            {t('page.industries.content.healthcare.title')}
+          </h3>
           <p class="text-white/70 mt-2">
-            We build secure and compliant healthcare solutions that improve
-            patient outcomes.
+            {t('page.industries.content.healthcare.description')}
           </p>
         </div>
         <div
           class="bg-dark/50 backdrop-blur-sm rounded-xl p-8 border border-white/10"
         >
-          <h3 class="text-2xl font-bold text-white">Finance</h3>
+          <h3 class="text-2xl font-bold text-white">
+            {t('page.industries.content.finance.title')}
+          </h3>
           <p class="text-white/70 mt-2">
-            We create reliable and scalable financial applications for banks and
-            fintech companies.
+            {t('page.industries.content.finance.description')}
           </p>
         </div>
         <div
           class="bg-dark/50 backdrop-blur-sm rounded-xl p-8 border border-white/10"
         >
-          <h3 class="text-2xl font-bold text-white">E-commerce</h3>
+          <h3 class="text-2xl font-bold text-white">
+            {t('page.industries.content.ecommerce.title')}
+          </h3>
           <p class="text-white/70 mt-2">
-            We develop high-performance e-commerce platforms that drive sales
-            and customer loyalty.
+            {t('page.industries.content.ecommerce.description')}
           </p>
         </div>
         <div
           class="bg-dark/50 backdrop-blur-sm rounded-xl p-8 border border-white/10"
         >
-          <h3 class="text-2xl font-bold text-white">Education</h3>
+          <h3 class="text-2xl font-bold text-white">
+            {t('page.industries.content.education.title')}
+          </h3>
           <p class="text-white/70 mt-2">
-            We create engaging and interactive learning experiences for students
-            of all ages.
+            {t('page.industries.content.education.description')}
           </p>
         </div>
         <div
           class="bg-dark/50 backdrop-blur-sm rounded-xl p-8 border border-white/10"
         >
-          <h3 class="text-2xl font-bold text-white">Real Estate</h3>
+          <h3 class="text-2xl font-bold text-white">
+            {t('page.industries.content.realestate.title')}
+          </h3>
           <p class="text-white/70 mt-2">
-            We build innovative solutions that streamline the real estate
-            process for buyers, sellers, and agents.
+            {t('page.industries.content.realestate.description')}
           </p>
         </div>
         <div
           class="bg-dark/50 backdrop-blur-sm rounded-xl p-8 border border-white/10"
         >
-          <h3 class="text-2xl font-bold text-white">Logistics</h3>
+          <h3 class="text-2xl font-bold text-white">
+            {t('page.industries.content.logistics.title')}
+          </h3>
           <p class="text-white/70 mt-2">
-            We develop efficient and reliable logistics software to optimize
-            supply chain management.
+            {t('page.industries.content.logistics.description')}
           </p>
         </div>
       </div>
