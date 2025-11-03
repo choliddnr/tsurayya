@@ -1,8 +1,13 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 
+export function getStaticPaths() {
+  return [{ params: { locale: 'en' } }, { params: { locale: 'id' } }];
+}
+
 export async function GET(context) {
-  const blog = await getCollection('blog');
+  const { locale } = context.params;
+  const blog = await getCollection('blog', ({ slug }) => slug.startsWith(locale));
   return rss({
     title: 'Tsurayya Blog',
     description: 'The latest news and articles from Tsurayya',
@@ -11,7 +16,7 @@ export async function GET(context) {
       title: post.data.title,
       pubDate: post.data.pubDate,
       description: post.data.description,
-      link: `/blog/${post.slug}/`,
+      link: `/${locale}/blog/${post.slug.replace(`${locale}/`, '')}/`,
     })),
   });
 }
