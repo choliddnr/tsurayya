@@ -12,15 +12,13 @@ export function getStaticPaths() {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const projects = (await getCollection('projects', ({ data }) => data.lang === lang)).sort(
-  (a, b) => (a.data.order || 999) - (b.data.order || 999)
-);
+const projects = await getCollection(
+  'projects',
+  ({ data }) => data.lang === lang
+); //.sort((a, b) => (a.data.order || 999) - (b.data.order || 999));
 ---
 
-<Layout
-  title={t('page.work.title')}
-  description={t('page.work.description')}
->
+<Layout title={t('page.work.title')} description={t('page.work.description')}>
   <PageHero
     title={t('page.work.hero.title')}
     description={t('page.work.hero.description')}
@@ -56,7 +54,7 @@ const projects = (await getCollection('projects', ({ data }) => data.lang === la
               data-tech={project.data.technologies.join(' ').toLowerCase()}
             >
               <a
-                href={`/projects/${project.slug}`}
+                href={`/${lang}/projects/${project.slug.split('/').slice(1).join('/')}`}
                 class="flex flex-col h-full"
               >
                 <div class="h-48 relative overflow-hidden">

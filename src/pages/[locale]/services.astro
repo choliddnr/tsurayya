@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
-import Services from '../../components/Services.astro';
+import ServicesComponent from '../../components/Services.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 export function getStaticPaths() {
@@ -12,10 +12,13 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title={t('page.services.title')} description={t('page.services.description')}>
+<Layout
+  title={t('page.services.title')}
+  description={t('page.services.description')}
+>
   <PageHero
     title={t('page.services.hero.title')}
     description={t('page.services.hero.description')}
   />
-  <Services />
+  <ServicesComponent />
 </Layout>

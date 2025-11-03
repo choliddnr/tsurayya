@@ -2,6 +2,10 @@
 import { getCollection } from 'astro:content';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
+export function getStaticPaths() {
+  return [{ params: { locale: 'en' } }, { params: { locale: 'id' } }];
+}
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -11,7 +15,10 @@ interface Props {
 
 const { limit } = Astro.props;
 
-let projects = await getCollection('projects');
+let projects = await getCollection(
+  'projects',
+  ({ data }) => data.lang === lang
+);
 
 if (limit) {
   projects = projects.slice(0, limit);
@@ -24,8 +31,10 @@ if (limit) {
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center">
-      <h2 class="text-3xl font-extrabold text-white sm:text-4xl" set:html={t('work.title')}>
-      </h2>
+      <h2
+        class="text-3xl font-extrabold text-white sm:text-4xl"
+        set:html={t('work.title')}
+      />
       <p class="mt-4 max-w-2xl text-xl text-white/70 mx-auto">
         {t('work.subtitle')}
       </p>
