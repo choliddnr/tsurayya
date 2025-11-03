@@ -63,8 +63,9 @@ if (limit) {
                 ))}
               </div>
               <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/* href={`/projects/${project.slug}`} */}
                 <a
-                  href={`/projects/${project.slug}`}
+                  href={`/${lang}/projects/${project.slug.split('/').slice(1).join('/')}`}
                   class="text-accent text-sm font-medium inline-flex items-center"
                 >
                   {t('work.cta')} <i class="fas fa-arrow-right ml-2" />
@@ -80,7 +81,7 @@ if (limit) {
       limit && (
         <div class="mt-12 text-center">
           <a
-            href="/projects"
+            href={`/${lang}/work`}
             class="inline-flex items-center px-8 py-4 border border-primary text-base font-medium rounded-full text-primary bg-transparent hover:bg-primary/10 transition-all cyber-button"
           >
             {t('work.viewAll')}

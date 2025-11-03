@@ -1,21 +1,26 @@
 ---
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 import Layout from '../../../layouts/Layout.astro';
+export function getStaticPaths() {
+  return [{ params: { locale: 'en' } }, { params: { locale: 'id' } }];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Guides">
+<Layout title={t('page.support.guides.title')} description={t('page.support.guides.description')}>
   <section class="py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-8">
-        <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-          <span class="gradient-text">Guides</span>
+        <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl" set:html={t('page.support.guides.hero.title')}>
         </h1>
         <p class="mt-4 text-xl text-white/70">
-          Step-by-step tutorials to help you get started and make the most of
-          our solutions.
+          {t('page.support.guides.hero.description')}
         </p>
       </div>
       <div class="prose prose-invert mx-auto">
-        <p>Content coming soon!</p>
+        <p>{t('page.support.guides.content')}</p>
       </div>
     </div>
   </section>

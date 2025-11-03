@@ -1,20 +1,26 @@
 ---
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 import Layout from '../../../layouts/Layout.astro';
+export function getStaticPaths() {
+  return [{ params: { locale: 'en' } }, { params: { locale: 'id' } }];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="API Status">
+<Layout title={t('page.support.apiStatus.title')} description={t('page.support.apiStatus.description')}>
   <section class="py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-8">
-        <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-          API <span class="gradient-text">Status</span>
+        <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl" set:html={t('page.support.apiStatus.hero.title')}>
         </h1>
         <p class="mt-4 text-xl text-white/70">
-          Real-time updates on the status of our APIs and services.
+          {t('page.support.apiStatus.hero.description')}
         </p>
       </div>
       <div class="prose prose-invert mx-auto">
-        <p>All systems operational.</p>
+        <p>{t('page.support.apiStatus.content')}</p>
       </div>
     </div>
   </section>

@@ -1,16 +1,22 @@
 ---
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 import Layout from '../../../layouts/Layout.astro';
+export function getStaticPaths() {
+  return [{ params: { locale: 'en' } }, { params: { locale: 'id' } }];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Documentation">
+<Layout title={t('page.support.documentation.title')} description={t('page.support.documentation.description')}>
   <section class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
-        <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-          <span class="gradient-text">Documentation</span>
+        <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl" set:html={t('page.support.documentation.hero.title')}>
         </h1>
         <p class="mt-4 max-w-2xl text-xl text-white/70 mx-auto">
-          Find everything you need to know about our products and services.
+          {t('page.support.documentation.hero.description')}
         </p>
       </div>
 
@@ -19,35 +25,34 @@ import Layout from '../../../layouts/Layout.astro';
           <div
             class="bg-dark/50 backdrop-blur-sm rounded-xl p-8 border border-white/10 mb-8"
           >
-            <h3 class="text-2xl font-bold text-white">Getting Started</h3>
+            <h3 class="text-2xl font-bold text-white">{t('page.support.documentation.content.gettingStarted.title')}</h3>
             <p class="text-white/70 mt-2">
-              Learn how to get started with our platform.
+              {t('page.support.documentation.content.gettingStarted.description')}
             </p>
             <div class="mt-4">
-              <a href="#" class="text-accent hover:underline">Read More</a>
+              <a href="#" class="text-accent hover:underline">{t('page.support.documentation.content.readMore')}</a>
             </div>
           </div>
           <div
             class="bg-dark/50 backdrop-blur-sm rounded-xl p-8 border border-white/10 mb-8"
           >
-            <h3 class="text-2xl font-bold text-white">API Reference</h3>
+            <h3 class="text-2xl font-bold text-white">{t('page.support.documentation.content.apiReference.title')}</h3>
             <p class="text-white/70 mt-2">
-              Explore our API and learn how to integrate with our services.
+              {t('page.support.documentation.content.apiReference.description')}
             </p>
             <div class="mt-4">
-              <a href="#" class="text-accent hover:underline">Read More</a>
+              <a href="#" class="text-accent hover:underline">{t('page.support.documentation.content.readMore')}</a>
             </div>
           </div>
           <div
             class="bg-dark/50 backdrop-blur-sm rounded-xl p-8 border border-white/10"
           >
-            <h3 class="text-2xl font-bold text-white">Guides</h3>
+            <h3 class="text-2xl font-bold text-white">{t('page.support.documentation.content.guides.title')}</h3>
             <p class="text-white/70 mt-2">
-              Follow our step-by-step guides to get the most out of our
-              platform.
+              {t('page.support.documentation.content.guides.description')}
             </p>
             <div class="mt-4">
-              <a href="#" class="text-accent hover:underline">Read More</a>
+              <a href="#" class="text-accent hover:underline">{t('page.support.documentation.content.readMore')}</a>
             </div>
           </div>
         </div>

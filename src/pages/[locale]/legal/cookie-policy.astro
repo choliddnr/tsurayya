@@ -9,19 +9,18 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title="Cookie Policy">
+<Layout title={t('page.legal.cookie.title')} description={t('page.legal.cookie.description')}>
   <section class="py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-8">
-        <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-          Cookie <span class="gradient-text">Policy</span>
+        <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl" set:html={t('page.legal.cookie.hero.title')}>
         </h1>
         <p class="mt-4 text-xl text-white/70">
-          Learn about how we use cookies on our website.
+          {t('page.legal.cookie.hero.description')}
         </p>
       </div>
       <div class="prose prose-invert mx-auto">
-        <p>Detailed cookie policy coming soon!</p>
+        <p>{t('page.legal.cookie.content')}</p>
       </div>
     </div>
   </section>

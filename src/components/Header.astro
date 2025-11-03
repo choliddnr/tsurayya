@@ -140,9 +140,26 @@ const industriesContent = [
         href={'/' + lang + '/blog'}
         class="text-white hover:text-[var(--color-accent)]">{t('nav.blog')}</a
       >
+      <div
+        class="flex items-center space-x-2 px-4 py-2 rounded-full border border-white/20"
+      >
+        <a
+          href={Astro.url.pathname.replace(`/${lang}`, '/en')}
+          class={` ${lang === 'en' ? 'font-bold text-[var(--color-accent)]' : 'text-white'} `}
+        >
+          EN
+        </a>
+        <span class="text-white">|</span>
+        <a
+          href={Astro.url.pathname.replace(`/${lang}`, '/id')}
+          class={` ${lang === 'id' ? 'font-bold text-[var(--color-accent)]' : 'text-white'} `}
+        >
+          ID
+        </a>
+      </div>
       <a
         href={'/' + lang + '/contact'}
-        class="bg-[var(--color-accent)] text-dark px-4 py-2 rounded-full hover:opacity-90 cyber-button"
+        class="bg-[var(--color-accent)] text-dark px-3 py-2 rounded-full hover:opacity-90 cyber-button"
         >{t('nav.contact')}</a
       >
     </div>
@@ -165,6 +182,21 @@ const industriesContent = [
   </nav>
   <div id="mobile-menu" class="md:hidden" style="display: none;">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <div class="flex items-center space-x-2 px-3 py-2">
+        <a
+          href={Astro.url.pathname.replace(`/${lang}`, '/en')}
+          class={` ${lang === 'en' ? 'font-bold text-[var(--color-accent)]' : 'text-white'} `}
+        >
+          EN
+        </a>
+        <span class="text-white">|</span>
+        <a
+          href={Astro.url.pathname.replace(`/${lang}`, '/id')}
+          class={` ${lang === 'id' ? 'font-bold text-[var(--color-accent)]' : 'text-white'}`}
+        >
+          ID
+        </a>
+      </div>
       <NavDropdownMobile
         title={t('nav.solutions')}
         content={solutionsContent}
