@@ -7,10 +7,60 @@ export const defaultLang = 'en';
 
 export const ui = {
   en: {
+    'nav.logo.alt': 'Tsurayya Engineering Logo',
+    'nav.logo.engineering': 'Engineering',
     'nav.solutions': 'Solutions',
+    'nav.solutions.description.primary':
+      'We craft scalable digital solutions tailored to real-world business challenges.',
+    'nav.solutions.description.secondary':
+      'From websites to AI-powered systems, our solutions are built to solve problems and deliver results.',
+    'nav.solutions.content.ai.title': 'AI & Automation',
+    'nav.solutions.content.ai.description':
+      'Boost efficiency with smart chatbots and workflows.',
+    'nav.solutions.content.web.title': 'Web Development',
+    'nav.solutions.content.web.description':
+      'Custom websites and web apps tailored to your goals.',
+    'nav.solutions.content.infra.title': 'Infrastructure',
+    'nav.solutions.content.infra.description':
+      'Reliable, secure, and scalable system setups.',
+    'nav.solutions.content.tools.title': 'Business Tools',
+    'nav.solutions.content.tools.description':
+      'Lead gen, client portals, and internal dashboards.',
     'nav.technologies': 'Technologies',
-    'nav.industries': 'Industries',
+    'nav.technologies.description.primary':
+      'We choose proven, modern technologies trusted by the industry.',
+    'nav.technologies.description.secondary':
+      'Our stack is carefully selected for performance, scalability, and long-term reliability.',
+    'nav.technologies.content.frontend.title': 'Frontend',
+    'nav.technologies.content.frontend.description':
+      'Nuxt 3, Vue3, Astrojs, Tailwind CSS, AlpineJS — fast & responsive.',
+    'nav.technologies.content.backend.title': 'Backend',
+    'nav.technologies.content.backend.description':
+      'Node.js, Bun, PocketBase for powerful APIs.',
+    'nav.technologies.content.ai.title': 'AI Tools',
+    'nav.technologies.content.ai.description':
+      'GPT, n8n, Langchain for automation and insight.',
+    'nav.technologies.content.devops.title': 'DevOps & Infra',
+    'nav.technologies.content.devops.description':
+      'Docker, Nginx, Kubernetes for modern deployment.',
     'nav.company': 'Company',
+    'nav.company.description.primary':
+      'Tsurayya Engineering is your partner in digital innovation.',
+    'nav.company.description.secondary': `Learn more about Tsurayya Engineering, our mission, how we work, and what we've done.`,
+    'nav.company.content.about.title': 'About Us',
+    'nav.company.content.about.description':
+      'Our vision, mission, and core values.',
+    'nav.company.content.work.title': 'Our Work',
+    'nav.company.content.work.description': 'Knowing what we have done.',
+    'nav.company.content.blog.title': 'Our Blog',
+    'nav.company.content.blog.description':
+      'Sharing out knowladge about tech, business, and more.',
+    'nav.company.content.industries.title': 'Industries We Serve',
+    'nav.company.content.industries.description':
+      'We serve diverse industries with custom-fit digital tools..',
+    'nav.company.content.contact.title': 'Contact Us',
+    'nav.company.content.contact.description':
+      'Start a conversation with us today.',
     'nav.about': 'About',
     'nav.work': 'Our Work',
     'nav.blog': 'Blog',
@@ -335,10 +385,61 @@ export const ui = {
     'page.support.guides.content': 'Detailed guides coming soon!',
   },
   id: {
+    'nav.logo.alt': 'Logo Tsurayya Engineering',
+    'nav.logo.engineering': 'Engineering',
     'nav.solutions': 'Layanan',
+    'nav.solutions.description.primary':
+      'Kami menciptakan solusi digital yang dapat diskalakan yang disesuaikan dengan tantangan bisnis dunia nyata.',
+    'nav.solutions.description.secondary':
+      'Dari situs web hingga sistem bertenaga AI, solusi kami dibuat untuk memecahkan masalah dan memberikan hasil.',
+    'nav.solutions.content.ai.title': 'AI & Otomatisasi',
+    'nav.solutions.content.ai.description':
+      'Tingkatkan efisiensi dengan chatbot dan alur kerja cerdas.',
+    'nav.solutions.content.web.title': 'Pengembangan Web',
+    'nav.solutions.content.web.description':
+      'Situs web dan aplikasi web khusus yang disesuaikan dengan tujuan Anda.',
+    'nav.solutions.content.infra.title': 'Infrastruktur',
+    'nav.solutions.content.infra.description':
+      'Pengaturan sistem yang andal, aman, dan dapat diskalakan.',
+    'nav.solutions.content.tools.title': 'Alat Bisnis',
+    'nav.solutions.content.tools.description':
+      'Penghasil prospek, portal klien, dan dasbor internal.',
     'nav.technologies': 'Teknologi',
-    'nav.industries': 'Industri',
+    'nav.technologies.description.primary':
+      'Kami memilih teknologi modern yang terbukti dan dipercaya oleh industri.',
+    'nav.technologies.description.secondary':
+      'Tumpukan kami dipilih dengan cermat untuk kinerja, skalabilitas, dan keandalan jangka panjang.',
+    'nav.technologies.content.frontend.title': 'Frontend',
+    'nav.technologies.content.frontend.description':
+      'Nuxt 3, Vue3, Astrojs, Tailwind CSS, AlpineJS — cepat & responsif.',
+    'nav.technologies.content.backend.title': 'Backend',
+    'nav.technologies.content.backend.description':
+      'Node.js, Bun, PocketBase untuk API yang kuat.',
+    'nav.technologies.content.ai.title': 'Alat AI',
+    'nav.technologies.content.ai.description':
+      'GPT, n8n, Langchain untuk otomatisasi dan wawasan.',
+    'nav.technologies.content.devops.title': 'DevOps & Infra',
+    'nav.technologies.content.devops.description':
+      'Docker, Nginx, Kubernetes untuk penerapan modern.',
     'nav.company': 'Perusahaan',
+    'nav.company.description.primary':
+      'Tsurayya Engineering adalah mitra Anda dalam inovasi digital.',
+    'nav.company.description.secondary':
+      'Pelajari lebih lanjut tentang Tsurayya Engineering, misi kami, cara kami bekerja, dan apa yang telah kami lakukan.',
+    'nav.company.content.about.title': 'Tentang Kami',
+    'nav.company.content.about.description':
+      'Visi, misi, dan nilai-nilai inti kami.',
+    'nav.company.content.work.title': 'Portofolio',
+    'nav.company.content.work.description': 'Mengetahui apa yang telah kami lakukan.',
+    'nav.company.content.blog.title': 'Blog Kami',
+    'nav.company.content.blog.description':
+      'Berbagi pengetahuan kami tentang teknologi, bisnis, dan lainnya.',
+    'nav.company.content.industries.title': 'Industri yang Kami Layani',
+    'nav.company.content.industries.description':
+      'Kami melayani berbagai industri dengan alat digital yang disesuaikan.',
+    'nav.company.content.contact.title': 'Hubungi Kami',
+    'nav.company.content.contact.description':
+      'Mulai percakapan dengan kami hari ini.',
     'nav.about': 'Tentang Kami',
     'nav.work': 'Portofolio',
     'nav.blog': 'Blog',

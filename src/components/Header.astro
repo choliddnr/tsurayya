@@ -7,92 +7,88 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const solutionDescription = {
-  primary:
-    'We craft scalable digital solutions tailored to real-world business challenges.',
-  secondary:
-    'From websites to AI-powered systems, our solutions are built to solve problems and deliver results.',
+  primary: t('nav.solutions.description.primary'),
+  secondary: t('nav.solutions.description.secondary'),
 };
 const solutionsContent = [
   {
-    title: 'AI & Automation',
+    title: t('nav.solutions.content.ai.title'),
     href: `/${lang}/services`,
-    description: 'Boost efficiency with smart chatbots and workflows.',
+    description: t('nav.solutions.content.ai.description'),
   },
   {
-    title: 'Web Development',
+    title: t('nav.solutions.content.web.title'),
     href: `/${lang}/services`,
-    description: 'Custom websites and web apps tailored to your goals.',
+    description: t('nav.solutions.content.web.description'),
   },
   {
-    title: 'Infrastructure',
+    title: t('nav.solutions.content.infra.title'),
     href: `/${lang}/services`,
-    description: 'Reliable, secure, and scalable system setups.',
+    description: t('nav.solutions.content.infra.description'),
   },
   {
-    title: 'Business Tools',
+    title: t('nav.solutions.content.tools.title'),
     href: `/${lang}/services`,
-    description: 'Lead gen, client portals, and internal dashboards.',
+    description: t('nav.solutions.content.tools.description'),
   },
 ];
 
 const technologiesDescription = {
-  primary: 'We choose proven, modern technologies trusted by the industry.',
-  secondary:
-    'Our stack is carefully selected for performance, scalability, and long-term reliability.',
+  primary: t('nav.technologies.description.primary'),
+  secondary: t('nav.technologies.description.secondary'),
 };
 const technologiesContent = [
   {
-    title: 'Frontend',
+    title: t('nav.technologies.content.frontend.title'),
     href: `/${lang}/technologies`,
-    description:
-      'Nuxt 3, Vue3, Astrojs, Tailwind CSS, AlpineJS — fast & responsive.',
+    description: t('nav.technologies.content.frontend.description'),
   },
   {
-    title: 'Backend',
+    title: t('nav.technologies.content.backend.title'),
     href: `/${lang}/technologies`,
-    description: 'Node.js, Bun, PocketBase for powerful APIs.',
+    description: t('nav.technologies.content.backend.description'),
   },
   {
-    title: 'AI Tools',
+    title: t('nav.technologies.content.ai.title'),
     href: `/${lang}/technologies`,
-    description: 'GPT, n8n, Langchain for automation and insight.',
+    description: t('nav.technologies.content.ai.description'),
   },
   {
-    title: 'DevOps & Infra',
+    title: t('nav.technologies.content.devops.title'),
     href: `/${lang}/technologies`,
-    description: 'Docker, Nginx, Kubernetes for modern deployment.',
+    description: t('nav.technologies.content.devops.description'),
   },
 ];
 
 const companyDescription = {
-  primary: 'Tsurayya Engineering is your partner in digital innovation.',
-  secondary: `Learn more about Tsurayya Engineering, our mission, how we work, and what we've done.`,
+  primary: t('nav.company.description.primary'),
+  secondary: t('nav.company.description.secondary'),
 };
 const companyContent = [
   {
-    title: 'About Us',
+    title: t('nav.company.content.about.title'),
     href: `/${lang}/about`,
-    description: 'Our vision, mission, and core values.',
+    description: t('nav.company.content.about.description'),
   },
   {
-    title: 'Our Work',
+    title: t('nav.company.content.work.title'),
     href: `/${lang}/work`,
-    description: 'Knowing what we have done.',
+    description: t('nav.company.content.work.description'),
   },
   {
-    title: 'Our Blog',
+    title: t('nav.company.content.blog.title'),
     href: `/${lang}/blog`,
-    description: 'Sharing out knowladge about tech, business, and more.',
+    description: t('nav.company.content.blog.description'),
   },
   {
-    title: 'Industries We Serve',
+    title: t('nav.company.content.industries.title'),
     href: `/${lang}/industries`,
-    description: 'We serve diverse industries with custom-fit digital tools..',
+    description: t('nav.company.content.industries.description'),
   },
   {
-    title: 'Contact Us',
+    title: t('nav.company.content.contact.title'),
     href: `/${lang}/contact`,
-    description: 'Start a conversation with us today.',
+    description: t('nav.company.content.contact.description'),
   },
 ];
 ---
@@ -106,9 +102,10 @@ const companyContent = [
       <a href={'/' + lang} class="text-white text-2xl font-bold flex flex-row"
         ><img
           src="/favicon.svg"
-          alt="tsurayya engineering"
+          alt={t('nav.logo.alt')}
           class="size-8"
-        />Tsurayya<span class="gradient-text">Engineering</span></a
+        />Tsurayya<span class="gradient-text">{t('nav.logo.engineering')}</span
+        ></a
       >
     </div>
     <div class="hidden lg:flex space-x-4 items-center">
