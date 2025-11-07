@@ -67,7 +67,7 @@ const { title, content, description } = Astro.props;
   document.addEventListener('DOMContentLoaded', () => {
     const dropdowns = document.querySelectorAll('.group.relative');
 
-    dropdowns.forEach(dropdown => {
+    dropdowns.forEach((dropdown) => {
       const button = dropdown.querySelector('button');
       const menu = dropdown.querySelector('[role="menu"]');
 

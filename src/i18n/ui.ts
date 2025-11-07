@@ -10,6 +10,7 @@ export const ui = {
     'nav.solutions': 'Solutions',
     'nav.technologies': 'Technologies',
     'nav.industries': 'Industries',
+    'nav.company': 'Company',
     'nav.about': 'About',
     'nav.work': 'Our Work',
     'nav.blog': 'Blog',
@@ -269,52 +270,75 @@ export const ui = {
     'page.work.content.noResults.description':
       'Try adjusting your search terms or view all our services.',
     'page.legal.cookie.title': 'Cookie Policy | Tsurayya',
-    'page.legal.cookie.description': 'Learn about how we use cookies on our website.',
-    'page.legal.cookie.hero.title': 'Cookie <span class="gradient-text">Policy</span>',
-    'page.legal.cookie.hero.description': 'Learn about how we use cookies on our website.',
+    'page.legal.cookie.description':
+      'Learn about how we use cookies on our website.',
+    'page.legal.cookie.hero.title':
+      'Cookie <span class="gradient-text">Policy</span>',
+    'page.legal.cookie.hero.description':
+      'Learn about how we use cookies on our website.',
     'page.legal.cookie.content': 'Detailed cookie policy coming soon!',
     'page.legal.licenses.title': 'Licenses | Tsurayya',
-    'page.legal.licenses.description': 'Learn about the licenses of the software we use.',
-    'page.legal.licenses.hero.title': '<span class="gradient-text">Licenses</span>',
-    'page.legal.licenses.hero.description': 'Learn about the licenses of the software we use.',
+    'page.legal.licenses.description':
+      'Learn about the licenses of the software we use.',
+    'page.legal.licenses.hero.title':
+      '<span class="gradient-text">Licenses</span>',
+    'page.legal.licenses.hero.description':
+      'Learn about the licenses of the software we use.',
     'page.legal.licenses.content': 'Detailed licenses coming soon!',
     'page.legal.privacy.title': 'Privacy Policy | Tsurayya',
     'page.legal.privacy.description': 'Learn about how we handle your data.',
-    'page.legal.privacy.hero.title': 'Privacy <span class="gradient-text">Policy</span>',
-    'page.legal.privacy.hero.description': 'Learn about how we handle your data.',
+    'page.legal.privacy.hero.title':
+      'Privacy <span class="gradient-text">Policy</span>',
+    'page.legal.privacy.hero.description':
+      'Learn about how we handle your data.',
     'page.legal.privacy.content': 'Detailed privacy policy coming soon!',
     'page.legal.terms.title': 'Terms of Service | Tsurayya',
     'page.legal.terms.description': 'Learn about our terms of service.',
-    'page.legal.terms.hero.title': 'Terms of <span class="gradient-text">Service</span>',
+    'page.legal.terms.hero.title':
+      'Terms of <span class="gradient-text">Service</span>',
     'page.legal.terms.hero.description': 'Learn about our terms of service.',
     'page.legal.terms.content': 'Detailed terms of service coming soon!',
     'page.support.apiStatus.title': 'API Status | Tsurayya',
-    'page.support.apiStatus.description': 'Real-time updates on the status of our APIs and services.',
-    'page.support.apiStatus.hero.title': 'API <span class="gradient-text">Status</span>',
-    'page.support.apiStatus.hero.description': 'Real-time updates on the status of our APIs and services.',
+    'page.support.apiStatus.description':
+      'Real-time updates on the status of our APIs and services.',
+    'page.support.apiStatus.hero.title':
+      'API <span class="gradient-text">Status</span>',
+    'page.support.apiStatus.hero.description':
+      'Real-time updates on the status of our APIs and services.',
     'page.support.apiStatus.content': 'All systems operational.',
     'page.support.documentation.title': 'Documentation | Tsurayya',
-    'page.support.documentation.description': 'Comprehensive guides and references for our products and services.',
-    'page.support.documentation.hero.title': '<span class="gradient-text">Documentation</span>',
-    'page.support.documentation.hero.description': 'Comprehensive guides and references for our products and services.',
+    'page.support.documentation.description':
+      'Comprehensive guides and references for our products and services.',
+    'page.support.documentation.hero.title':
+      '<span class="gradient-text">Documentation</span>',
+    'page.support.documentation.hero.description':
+      'Comprehensive guides and references for our products and services.',
     'page.support.documentation.content': 'Detailed documentation coming soon!',
-    'page.support.documentation.content.gettingStarted.title': 'Getting Started',
-    'page.support.documentation.content.gettingStarted.description': 'Learn how to get started with our platform.',
+    'page.support.documentation.content.gettingStarted.title':
+      'Getting Started',
+    'page.support.documentation.content.gettingStarted.description':
+      'Learn how to get started with our platform.',
     'page.support.documentation.content.readMore': 'Read More',
     'page.support.documentation.content.apiReference.title': 'API Reference',
-    'page.support.documentation.content.apiReference.description': 'Explore our API and learn how to integrate with our services.',
+    'page.support.documentation.content.apiReference.description':
+      'Explore our API and learn how to integrate with our services.',
     'page.support.documentation.content.guides.title': 'Guides',
-    'page.support.documentation.content.guides.description': 'Follow our step-by-step guides to get the most out of our platform.',
+    'page.support.documentation.content.guides.description':
+      'Follow our step-by-step guides to get the most out of our platform.',
     'page.support.guides.title': 'Guides | Tsurayya',
-    'page.support.guides.description': 'Step-by-step tutorials and how-to guides to help you get started.',
-    'page.support.guides.hero.title': '<span class="gradient-text">Guides</span>',
-    'page.support.guides.hero.description': 'Step-by-step tutorials and how-to guides to help you get started.',
+    'page.support.guides.description':
+      'Step-by-step tutorials and how-to guides to help you get started.',
+    'page.support.guides.hero.title':
+      '<span class="gradient-text">Guides</span>',
+    'page.support.guides.hero.description':
+      'Step-by-step tutorials and how-to guides to help you get started.',
     'page.support.guides.content': 'Detailed guides coming soon!',
   },
   id: {
     'nav.solutions': 'Layanan',
     'nav.technologies': 'Teknologi',
     'nav.industries': 'Industri',
+    'nav.company': 'Perusahaan',
     'nav.about': 'Tentang Kami',
     'nav.work': 'Portofolio',
     'nav.blog': 'Blog',
@@ -579,46 +603,73 @@ export const ui = {
     'page.work.content.noResults.description':
       'Coba sesuaikan istilah pencarian Anda atau lihat semua layanan kami.',
     'page.legal.cookie.title': 'Kebijakan Cookie | Tsurayya',
-    'page.legal.cookie.description': 'Pelajari bagaimana kami menggunakan cookie di situs web kami.',
-    'page.legal.cookie.hero.title': '<span class="gradient-text">Kebijakan</span> Cookie',
-    'page.legal.cookie.hero.description': 'Pelajari bagaimana kami menggunakan cookie di situs web kami.',
-    'page.legal.cookie.content': 'Kebijakan cookie terperinci akan segera hadir!',
+    'page.legal.cookie.description':
+      'Pelajari bagaimana kami menggunakan cookie di situs web kami.',
+    'page.legal.cookie.hero.title':
+      '<span class="gradient-text">Kebijakan</span> Cookie',
+    'page.legal.cookie.hero.description':
+      'Pelajari bagaimana kami menggunakan cookie di situs web kami.',
+    'page.legal.cookie.content':
+      'Kebijakan cookie terperinci akan segera hadir!',
     'page.legal.licenses.title': 'Lisensi | Tsurayya',
-    'page.legal.licenses.description': 'Pelajari tentang lisensi perangkat lunak yang kami gunakan.',
-    'page.legal.licenses.hero.title': '<span class="gradient-text">Lisensi</span>',
-    'page.legal.licenses.hero.description': 'Pelajari tentang lisensi perangkat lunak yang kami gunakan.',
+    'page.legal.licenses.description':
+      'Pelajari tentang lisensi perangkat lunak yang kami gunakan.',
+    'page.legal.licenses.hero.title':
+      '<span class="gradient-text">Lisensi</span>',
+    'page.legal.licenses.hero.description':
+      'Pelajari tentang lisensi perangkat lunak yang kami gunakan.',
     'page.legal.licenses.content': 'Lisensi terperinci akan segera hadir!',
     'page.legal.privacy.title': 'Kebijakan Privasi | Tsurayya',
-    'page.legal.privacy.description': 'Pelajari bagaimana kami menangani data Anda.',
-    'page.legal.privacy.hero.title': '<span class="gradient-text">Kebijakan</span> Privasi',
-    'page.legal.privacy.hero.description': 'Pelajari bagaimana kami menangani data Anda.',
-    'page.legal.privacy.content': 'Kebijakan privasi terperinci akan segera hadir!',
+    'page.legal.privacy.description':
+      'Pelajari bagaimana kami menangani data Anda.',
+    'page.legal.privacy.hero.title':
+      '<span class="gradient-text">Kebijakan</span> Privasi',
+    'page.legal.privacy.hero.description':
+      'Pelajari bagaimana kami menangani data Anda.',
+    'page.legal.privacy.content':
+      'Kebijakan privasi terperinci akan segera hadir!',
     'page.legal.terms.title': 'Ketentuan Layanan | Tsurayya',
     'page.legal.terms.description': 'Pelajari tentang ketentuan layanan kami.',
-    'page.legal.terms.hero.title': '<span class="gradient-text">Ketentuan</span> Layanan',
-    'page.legal.terms.hero.description': 'Pelajari tentang ketentuan layanan kami.',
-    'page.legal.terms.content': 'Ketentuan layanan terperinci akan segera hadir!',
+    'page.legal.terms.hero.title':
+      '<span class="gradient-text">Ketentuan</span> Layanan',
+    'page.legal.terms.hero.description':
+      'Pelajari tentang ketentuan layanan kami.',
+    'page.legal.terms.content':
+      'Ketentuan layanan terperinci akan segera hadir!',
     'page.support.apiStatus.title': 'Status API | Tsurayya',
-    'page.support.apiStatus.description': 'Pembaruan real-time tentang status API dan layanan kami.',
-    'page.support.apiStatus.hero.title': 'Status <span class="gradient-text">API</span>',
-    'page.support.apiStatus.hero.description': 'Pembaruan real-time tentang status API dan layanan kami.',
+    'page.support.apiStatus.description':
+      'Pembaruan real-time tentang status API dan layanan kami.',
+    'page.support.apiStatus.hero.title':
+      'Status <span class="gradient-text">API</span>',
+    'page.support.apiStatus.hero.description':
+      'Pembaruan real-time tentang status API dan layanan kami.',
     'page.support.apiStatus.content': 'Semua sistem beroperasi normal.',
     'page.support.documentation.title': 'Dokumentasi | Tsurayya',
-    'page.support.documentation.description': 'Panduan komprehensif dan referensi untuk produk dan layanan kami.',
-    'page.support.documentation.hero.title': '<span class="gradient-text">Dokumentasi</span>',
-    'page.support.documentation.hero.description': 'Panduan komprehensif dan referensi untuk produk dan layanan kami.',
-    'page.support.documentation.content': 'Dokumentasi terperinci akan segera hadir!',
+    'page.support.documentation.description':
+      'Panduan komprehensif dan referensi untuk produk dan layanan kami.',
+    'page.support.documentation.hero.title':
+      '<span class="gradient-text">Dokumentasi</span>',
+    'page.support.documentation.hero.description':
+      'Panduan komprehensif dan referensi untuk produk dan layanan kami.',
+    'page.support.documentation.content':
+      'Dokumentasi terperinci akan segera hadir!',
     'page.support.documentation.content.gettingStarted.title': 'Memulai',
-    'page.support.documentation.content.gettingStarted.description': 'Pelajari cara memulai dengan platform kami.',
+    'page.support.documentation.content.gettingStarted.description':
+      'Pelajari cara memulai dengan platform kami.',
     'page.support.documentation.content.readMore': 'Baca Selengkapnya',
     'page.support.documentation.content.apiReference.title': 'Referensi API',
-    'page.support.documentation.content.apiReference.description': 'Jelajahi API kami dan pelajari cara berintegrasi dengan layanan kami.',
+    'page.support.documentation.content.apiReference.description':
+      'Jelajahi API kami dan pelajari cara berintegrasi dengan layanan kami.',
     'page.support.documentation.content.guides.title': 'Panduan',
-    'page.support.documentation.content.guides.description': 'Ikuti panduan langkah demi langkah kami untuk mendapatkan hasil maksimal dari platform kami.',
+    'page.support.documentation.content.guides.description':
+      'Ikuti panduan langkah demi langkah kami untuk mendapatkan hasil maksimal dari platform kami.',
     'page.support.guides.title': 'Panduan | Tsurayya',
-    'page.support.guides.description': 'Tutorial langkah demi langkah dan panduan cara untuk membantu Anda memulai.',
-    'page.support.guides.hero.title': '<span class="gradient-text">Panduan</span>',
-    'page.support.guides.hero.description': 'Tutorial langkah demi langkah dan panduan cara untuk membantu Anda memulai.',
+    'page.support.guides.description':
+      'Tutorial langkah demi langkah dan panduan cara untuk membantu Anda memulai.',
+    'page.support.guides.hero.title':
+      '<span class="gradient-text">Panduan</span>',
+    'page.support.guides.hero.description':
+      'Tutorial langkah demi langkah dan panduan cara untuk membantu Anda memulai.',
     'page.support.guides.content': 'Panduan terperinci akan segera hadir!',
   },
 } as const;

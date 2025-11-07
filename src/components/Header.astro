@@ -64,36 +64,35 @@ const technologiesContent = [
   },
 ];
 
-const industriesDescription = {
-  primary: 'We serve diverse industries with custom-fit digital tools.',
-  secondary:
-    'No matter your field, we adapt technology to meet your goals and speak your language.',
+const companyDescription = {
+  primary: 'Tsurayya Engineering is your partner in digital innovation.',
+  secondary: `Learn more about Tsurayya Engineering, our mission, how we work, and what we've done.`,
 };
-const industriesContent = [
+const companyContent = [
   {
-    title: 'Food & Beverage',
-    href: `/${lang}/industries`,
-    description: 'Menu tools, ordering systems, AI waiters.',
+    title: 'About Us',
+    href: `/${lang}/about`,
+    description: 'Our vision, mission, and core values.',
   },
   {
-    title: 'Retail & eCommerce',
-    href: `/${lang}/industries`,
-    description: 'Inventory tracking, chat-order bots, storefronts.',
+    title: 'Our Work',
+    href: `/${lang}/work`,
+    description: 'Knowing what we have done.',
   },
   {
-    title: 'Agencies',
-    href: `/${lang}/industries`,
-    description: 'Portals, automation, and smart reporting tools.',
+    title: 'Our Blog',
+    href: `/${lang}/blog`,
+    description: 'Sharing out knowladge about tech, business, and more.',
   },
   {
-    title: 'Health & Wellness',
+    title: 'Industries We Serve',
     href: `/${lang}/industries`,
-    description: 'Booking, support agents, and custom dashboards.',
+    description: 'We serve diverse industries with custom-fit digital tools..',
   },
   {
-    title: 'Education',
-    href: `/${lang}/industries`,
-    description: 'AI tutors, course systems, certification portals.',
+    title: 'Contact Us',
+    href: `/${lang}/contact`,
+    description: 'Start a conversation with us today.',
   },
 ];
 ---
@@ -112,7 +111,7 @@ const industriesContent = [
         />Tsurayya<span class="gradient-text">Engineering</span></a
       >
     </div>
-    <div class="hidden md:flex space-x-4 items-center">
+    <div class="hidden lg:flex space-x-4 items-center">
       <NavDropdown
         title={t('nav.solutions')}
         content={solutionsContent}
@@ -124,22 +123,11 @@ const industriesContent = [
         description={technologiesDescription}
       />
       <NavDropdown
-        title={t('nav.industries')}
-        content={industriesContent}
-        description={industriesDescription}
+        title={t('nav.company')}
+        content={companyContent}
+        description={companyDescription}
       />
-      <a
-        href={'/' + lang + '/about'}
-        class="text-white hover:text-[var(--color-accent)]">{t('nav.about')}</a
-      >
-      <a
-        href={'/' + lang + '/work'}
-        class="text-white hover:text-[var(--color-accent)]">{t('nav.work')}</a
-      >
-      <a
-        href={'/' + lang + '/blog'}
-        class="text-white hover:text-[var(--color-accent)]">{t('nav.blog')}</a
-      >
+
       <div
         class="flex items-center space-x-2 px-4 py-2 rounded-full border border-white/20"
       >
@@ -163,7 +151,22 @@ const industriesContent = [
         >{t('nav.contact')}</a
       >
     </div>
-    <div class="md:hidden flex items-center">
+    <div class="lg:hidden flex items-center gap-5">
+      <div class="flex items-center space-x-2 px-3 py-2">
+        <a
+          href={Astro.url.pathname.replace(`/${lang}`, '/en')}
+          class={` ${lang === 'en' ? 'font-bold text-[var(--color-accent)]' : 'text-white'} `}
+        >
+          EN
+        </a>
+        <span class="text-white">|</span>
+        <a
+          href={Astro.url.pathname.replace(`/${lang}`, '/id')}
+          class={` ${lang === 'id' ? 'font-bold text-[var(--color-accent)]' : 'text-white'}`}
+        >
+          ID
+        </a>
+      </div>
       <button id="mobile-menu-button" class="text-white focus:outline-none">
         <svg
           class="w-6 h-6"
@@ -182,21 +185,6 @@ const industriesContent = [
   </nav>
   <div id="mobile-menu" class="md:hidden" style="display: none;">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-      <div class="flex items-center space-x-2 px-3 py-2">
-        <a
-          href={Astro.url.pathname.replace(`/${lang}`, '/en')}
-          class={` ${lang === 'en' ? 'font-bold text-[var(--color-accent)]' : 'text-white'} `}
-        >
-          EN
-        </a>
-        <span class="text-white">|</span>
-        <a
-          href={Astro.url.pathname.replace(`/${lang}`, '/id')}
-          class={` ${lang === 'id' ? 'font-bold text-[var(--color-accent)]' : 'text-white'}`}
-        >
-          ID
-        </a>
-      </div>
       <NavDropdownMobile
         title={t('nav.solutions')}
         content={solutionsContent}
@@ -208,25 +196,11 @@ const industriesContent = [
         description={technologiesDescription}
       />
       <NavDropdownMobile
-        title={t('nav.industries')}
-        content={industriesContent}
-        description={industriesDescription}
+        title={t('nav.company')}
+        content={companyContent}
+        description={companyDescription}
       />
-      <a
-        href={'/' + lang + '/about'}
-        class="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[var(--color-accent)]"
-        >{t('nav.about')}</a
-      >
-      <a
-        href={'/' + lang + '/work'}
-        class="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[var(--color-accent)]"
-        >{t('nav.work')}</a
-      >
-      <a
-        href={'/' + lang + '/blog'}
-        class="text-white block px-3 py-2 rounded-md text-base font-medium hover:text-[var(--color-accent)]"
-        >{t('nav.blog')}</a
-      >
+
       <a
         href={'/' + lang + '/contact'}
         class="bg-[var(--color-accent)] text-dark block px-3 py-2 rounded-full text-center text-base font-medium hover:opacity-90 cyber-button"

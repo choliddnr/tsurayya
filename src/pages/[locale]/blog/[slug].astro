@@ -31,16 +31,18 @@ const { Content } = await post.render();
     title={post.data.title}
     description={`Published on ${post.data.pubDate.toDateString()} by ${post.data.author}`}
   />
-  {
-    post.data.image && (
-      <img
-        src={post.data.image}
-        alt={post.data.title}
-        class="mx-auto prose rounded-lg mb-8"
-      />
-    )
-  }
-  <div class="prose prose-invert mx-auto">
+  <div class="mx-auto px-2.5 md:px-0 prose prose-invert">
+    {
+      post.data.image && (
+        <img
+          src={post.data.image}
+          alt={post.data.title}
+          class=" w-full rounded-lg mb-8"
+        />
+      )
+    }
+  </div>
+  <div class="prose prose-invert px-2.5 md:px-0 mx-auto">
     <Content />
   </div>
 
