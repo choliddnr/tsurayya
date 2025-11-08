@@ -383,6 +383,13 @@ export const ui = {
     'page.support.guides.hero.description':
       'Step-by-step tutorials and how-to guides to help you get started.',
     'page.support.guides.content': 'Detailed guides coming soon!',
+    'page.contact.title': 'Contact Us | Tsurayya',
+    'page.contact.description':
+      'Get in touch with Tsurayya Engineering. We are here to answer your questions and help you with your next project.',
+    'page.contact.hero.title':
+      "Get in <span class='gradient-text'>Touch</span>",
+    'page.contact.hero.description':
+      "Whether you're planning your next big project or need help improving an existing system, we’re here to help.",
   },
   id: {
     'nav.logo.alt': 'Logo Tsurayya Engineering',
@@ -772,5 +779,12 @@ export const ui = {
     'page.support.guides.hero.description':
       'Tutorial langkah demi langkah dan panduan cara untuk membantu Anda memulai.',
     'page.support.guides.content': 'Panduan terperinci akan segera hadir!',
+    'page.contact.title': 'Hubungi Kami | Tsurayya',
+    'page.contact.description':
+      'Hubungi Tsurayya Engineering. Kami siap menjawab pertanyaan Anda dan membantu Anda dengan proyek Anda berikutnya.',
+    'page.contact.hero.title':
+      "Hubungi <span class='gradient-text'>Kami</span>",
+    'page.contact.hero.description':
+      'Baik Anda merencanakan proyek besar berikutnya atau butuh bantuan untuk meningkatkan sistem yang sudah ada, kami siap membantu.',
   },
 } as const;

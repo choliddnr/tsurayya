@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import ContactComp from '../../components/Contact.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return [{ params: { locale: 'en' } }, { params: { locale: 'id' } }];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={t('page.contact.title')}
+  description={t('page.contact.description')}
+>
+  <PageHero
+    title={t('page.contact.hero.title')}
+    description={t('page.contact.hero.description')}
+  />
+  <ContactComp />
+</Layout>
